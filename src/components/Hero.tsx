@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ArrowDown, ArrowRight, Github, Linkedin, Send } from 'lucide-react';
+import { ArrowDown, ArrowRight, Github, Linkedin, Send, Activity, Compass, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
 import { personalInfo } from '../data';
 
@@ -83,39 +83,59 @@ export default function Hero() {
         animate="visible"
         className="max-w-4xl text-center flex flex-col items-center justify-center"
       >
-        {/* Upper Accent badge */}
+        {/* Horizontal Badges / Pills */}
         <motion.div 
           variants={itemVariants}
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-mono mb-6 tracking-widest uppercase shadow-[0_0_15px_rgba(99,102,241,0.15)]"
+          className="flex flex-wrap items-center justify-center gap-3 mb-8"
         >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
-          </span>
-          Currently Open For Opportunities
+          {/* Pill 1: Open to Internship */}
+          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] md:text-xs font-mono font-semibold tracking-wider uppercase shadow-[0_0_15px_rgba(16,185,129,0.1)]">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+            </span>
+            Open to Internship 2026
+          </div>
+
+          {/* Pill 2: Building */}
+          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/20 text-rose-400 text-[10px] md:text-xs font-mono font-semibold tracking-wider uppercase shadow-[0_0_15px_rgba(244,63,94,0.1)]">
+            <Activity className="h-3.5 w-3.5" />
+            Building: Edulink Records
+          </div>
+
+          {/* Pill 3: Cmd + K Palette */}
+          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-800/40 border border-slate-700/60 text-slate-300 text-[10px] md:text-xs font-mono font-semibold tracking-wider uppercase shadow-[0_0_15px_rgba(0,0,0,0.2)]">
+            <Compass className="h-3.5 w-3.5" />
+            Cmd + K Palette
+          </div>
         </motion.div>
 
-        {/* Name with text reveal */}
-        <motion.h1 
-          variants={itemVariants}
-          className="font-display font-bold text-5xl md:text-8xl tracking-tight text-white mb-4"
-        >
-          Hey, I'm{" "}
-          <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent text-glow">
-            {personalInfo.name}
-          </span>
-        </motion.h1>
-
-        {/* Typewriter Rotator Subtitle */}
+        {/* Center Glowing Sparkles Circle Badge */}
         <motion.div 
           variants={itemVariants}
-          className="h-10 md:h-12 flex items-center justify-center mb-6"
+          className="relative w-24 h-24 md:w-28 md:h-28 rounded-full p-[1.5px] bg-gradient-to-tr from-purple-600 via-pink-500 to-cyan-400 shadow-[0_0_30px_rgba(168,85,247,0.35)] mb-8 flex items-center justify-center group cursor-pointer hover:scale-105 transition-transform duration-300"
         >
-          <p className="font-mono text-lg md:text-2xl text-slate-300 font-medium">
-            <span className="text-indigo-400">&gt; </span>
-            <span>{displayText}</span>
-            <span className="animate-pulse font-bold text-indigo-400">|</span>
-          </p>
+          <div className="w-full h-full rounded-full bg-slate-950/95 flex items-center justify-center">
+            <Sparkles className="h-10 w-10 text-emerald-400 drop-shadow-[0_0_15px_rgba(52,211,153,0.6)] group-hover:rotate-12 transition-transform duration-300" />
+          </div>
+        </motion.div>
+
+        {/* Name with metallic vertical gradient */}
+        <motion.h1 
+          variants={itemVariants}
+          className="font-display font-extrabold text-5xl md:text-8xl tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-slate-400 mb-2 select-none"
+        >
+          {personalInfo.name}
+        </motion.h1>
+
+        {/* Subtitle with Glowing Text */}
+        <motion.div 
+          variants={itemVariants}
+          className="mb-6"
+        >
+          <h2 className="font-display font-bold text-2xl md:text-3xl bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(99,102,241,0.5)]">
+            Full-Stack Web Developer
+          </h2>
         </motion.div>
 
         {/* Tagline */}
@@ -133,14 +153,14 @@ export default function Hero() {
         >
           <a 
             href="#projects" 
-            className="group relative flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-medium px-8 py-3.5 rounded-full shadow-[0_4px_20px_rgba(99,102,241,0.3)] hover:shadow-[0_4px_25px_rgba(99,102,241,0.5)] transition-all duration-300 transform hover:-translate-y-0.5 text-sm"
+            className="group relative flex items-center gap-2 bg-gradient-to-r from-rose-500 via-orange-500 to-amber-500 hover:from-rose-400 hover:via-orange-400 hover:to-amber-400 text-white font-medium px-8 py-3.5 rounded-full shadow-[0_4px_20px_rgba(244,63,94,0.35)] hover:shadow-[0_4px_25px_rgba(244,63,94,0.55)] transition-all duration-300 transform hover:-translate-y-0.5 text-sm"
           >
             <span>View My Projects</span>
             <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </a>
           <a 
             href="#contact" 
-            className="flex items-center gap-2 bg-white/5 hover:bg-white/10 text-slate-300 hover:text-white border border-white/10 hover:border-white/20 font-medium px-8 py-3.5 rounded-full transition-all duration-300 transform hover:-translate-y-0.5 text-sm shadow-[0_4px_15px_rgba(0,0,0,0.2)]"
+            className="flex items-center gap-2 bg-slate-950/60 hover:bg-slate-900/80 text-slate-300 hover:text-white border border-emerald-500/30 hover:border-emerald-500/60 font-medium px-8 py-3.5 rounded-full transition-all duration-300 transform hover:-translate-y-0.5 text-sm shadow-[0_4px_15px_rgba(0,0,0,0.3)]"
           >
             <span>Contact Me</span>
             <Send className="h-4 w-4" />

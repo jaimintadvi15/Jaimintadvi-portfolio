@@ -44,12 +44,12 @@ export default function Navbar({ activeSection }: NavbarProps) {
       >
         {/* Logo / Brand Name */}
         <a href="#home" className="flex items-center gap-2 group">
-          <div className="relative flex h-8 w-8 items-center justify-center rounded-full bg-indigo-600/20 border border-indigo-500/30 group-hover:bg-indigo-600/40 group-hover:border-indigo-400 transition-all duration-300">
-            <Code2 className="h-4 w-4 text-indigo-400 group-hover:text-white transition-colors duration-300" />
-            <div className="absolute inset-0 rounded-full bg-indigo-400/20 blur-sm scale-0 group-hover:scale-100 transition-all duration-300" />
+          <div className="relative flex h-8 w-8 items-center justify-center rounded-full bg-purple-600/20 border border-purple-500/30 group-hover:bg-purple-600/40 group-hover:border-purple-400 transition-all duration-300 shadow-[0_0_15px_rgba(147,51,234,0.15)]">
+            <span className="font-mono text-xs font-bold text-purple-400 group-hover:text-purple-300 transition-colors">&gt;_</span>
+            <div className="absolute inset-0 rounded-full bg-purple-400/20 blur-sm scale-0 group-hover:scale-100 transition-all duration-300" />
           </div>
-          <span className="font-display font-bold text-sm md:text-base tracking-wider bg-gradient-to-r from-white via-slate-200 to-indigo-300 bg-clip-text text-transparent group-hover:to-indigo-200 transition-all">
-            JAIMIN
+          <span className="font-display font-bold text-base tracking-tight text-white transition-all">
+            Jaimin<span className="text-cyan-400">.T</span>
           </span>
         </a>
 

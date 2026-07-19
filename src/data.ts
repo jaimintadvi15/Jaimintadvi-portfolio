@@ -10,7 +10,7 @@ export const personalInfo = {
   location: "Vadodara, Gujarat, India",
   currentlyLearning: "Full-Stack Web Development, System Design, Cloud Computing",
   bio: "I am a passionate 2nd-year Computer Science Engineering student with an eager interest in building functional, high-performance, and visually gorgeous web applications. As a Web Team Member at the Code Vimarsh Club, I collaborate with talented peers to maintain and enrich our club's online presence, while constantly pushing my boundaries in frontend design and backend systems.",
-  tagline: "Bridging the gap between creative visual layouts and solid software architecture."
+  tagline: "Crafting highly-performant, beautiful, and accessible web experiences while diving deep into computer science principles."
 };
 
 export const skillsData: SkillCategory[] = [
