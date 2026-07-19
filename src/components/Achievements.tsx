@@ -1,5 +1,6 @@
+import { useRef } from 'react';
 import { Trophy, Award, Star, Users, Calendar } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion, useScroll, useSpring } from 'motion/react';
 import { achievementsData } from '../data';
 
 // Helper to resolve specific milestone icons
@@ -19,6 +20,21 @@ function getAchievementIcon(type: string) {
 }
 
 export default function Achievements() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  // Track scroll progress of the timeline container relative to the viewport
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start 65%", "end 65%"]
+  });
+
+  // Smooth the scroll progress values using a spring physics effect
+  const scaleY = useSpring(scrollYProgress, {
+    stiffness: 80,
+    damping: 25,
+    restDelta: 0.001
+  });
+
   return (
     <section id="achievements" className="py-24 px-4 max-w-6xl mx-auto scroll-mt-20 overflow-hidden">
       {/* Section Header */}
@@ -33,9 +49,15 @@ export default function Achievements() {
       </div>
 
       {/* Timeline Wrapper */}
-      <div className="relative">
-        {/* Central connecting line drawing downwards (Desktop: Center, Mobile: Left) */}
-        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-indigo-500 via-purple-500 to-transparent -translate-x-1/2 opacity-30" />
+      <div ref={containerRef} className="relative">
+        {/* Background track (Desktop: Center, Mobile: Left) */}
+        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-slate-800/40 -translate-x-1/2" />
+
+        {/* Dynamic active connecting line drawing downwards */}
+        <motion.div 
+          style={{ scaleY }}
+          className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500 -translate-x-1/2 origin-top z-10"
+        />
 
         {/* List of achievements */}
         <div className="space-y-12 md:space-y-8">
@@ -48,10 +70,16 @@ export default function Achievements() {
                   isLeft ? 'md:justify-start' : 'md:justify-end'
                 }`}
               >
-                {/* Timeline node icon placeholder */}
-                <div className="absolute left-4 md:left-1/2 top-6 -translate-x-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-slate-900 border-2 border-indigo-500/50 shadow-[0_0_15px_rgba(99,102,241,0.4)] z-20">
+                {/* Timeline node icon with entry spring transition */}
+                <motion.div 
+                  initial={{ scale: 0.7, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ type: "spring", stiffness: 200, damping: 15 }}
+                  className="absolute left-4 md:left-1/2 top-6 -translate-x-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-slate-900 border-2 border-indigo-500/50 shadow-[0_0_15px_rgba(99,102,241,0.4)] z-20"
+                >
                   {getAchievementIcon(ach.iconType)}
-                </div>
+                </motion.div>
 
                 {/* Timeline Card */}
                 <motion.div
