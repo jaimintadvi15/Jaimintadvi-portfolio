@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { ArrowDown, ArrowRight, Github, Linkedin, Send, Activity, Compass, Sparkles } from 'lucide-react';
 import { motion } from 'motion/react';
 import { personalInfo } from '../data';
+import Magnetic from './Magnetic';
 
 export default function Hero() {
   const subtitles = [
@@ -151,20 +152,24 @@ export default function Hero() {
           variants={itemVariants}
           className="flex flex-col sm:flex-row items-center gap-4 mb-16"
         >
-          <a 
-            href="#projects" 
-            className="group relative flex items-center gap-2 bg-gradient-to-r from-rose-500 via-orange-500 to-amber-500 hover:from-rose-400 hover:via-orange-400 hover:to-amber-400 text-white font-medium px-8 py-3.5 rounded-full shadow-[0_4px_20px_rgba(244,63,94,0.35)] hover:shadow-[0_4px_25px_rgba(244,63,94,0.55)] transition-all duration-300 transform hover:-translate-y-0.5 text-sm"
-          >
-            <span>View My Projects</span>
-            <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-          </a>
-          <a 
-            href="#contact" 
-            className="flex items-center gap-2 bg-slate-950/60 hover:bg-slate-900/80 text-slate-300 hover:text-white border border-emerald-500/30 hover:border-emerald-500/60 font-medium px-8 py-3.5 rounded-full transition-all duration-300 transform hover:-translate-y-0.5 text-sm shadow-[0_4px_15px_rgba(0,0,0,0.3)]"
-          >
-            <span>Contact Me</span>
-            <Send className="h-4 w-4" />
-          </a>
+          <Magnetic>
+            <a 
+              href="#projects" 
+              className="group relative flex items-center gap-2 bg-gradient-to-r from-rose-500 via-orange-500 to-amber-500 hover:from-rose-400 hover:via-orange-400 hover:to-amber-400 text-white font-medium px-8 py-3.5 rounded-full shadow-[0_4px_20px_rgba(244,63,94,0.35)] hover:shadow-[0_4px_25px_rgba(244,63,94,0.55)] transition-all duration-300 transform hover:-translate-y-0.5 text-sm"
+            >
+              <span>View My Projects</span>
+              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </Magnetic>
+          <Magnetic>
+            <a 
+              href="#contact" 
+              className="flex items-center gap-2 bg-slate-950/60 hover:bg-slate-900/80 text-slate-300 hover:text-white border border-emerald-500/30 hover:border-emerald-500/60 font-medium px-8 py-3.5 rounded-full transition-all duration-300 transform hover:-translate-y-0.5 text-sm shadow-[0_4px_15px_rgba(0,0,0,0.3)]"
+            >
+              <span>Contact Me</span>
+              <Send className="h-4 w-4" />
+            </a>
+          </Magnetic>
         </motion.div>
 
         {/* Quick Social Badges */}
@@ -172,22 +177,26 @@ export default function Hero() {
           variants={itemVariants}
           className="flex items-center gap-4"
         >
-          <a 
-            href="https://github.com/jaimintadvi" 
-            target="_blank" 
-            referrerPolicy="no-referrer"
-            className="p-3 bg-white/5 border border-white/5 hover:border-white/20 hover:bg-white/10 text-slate-400 hover:text-indigo-400 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
-          >
-            <Github className="h-5 w-5" />
-          </a>
-          <a 
-            href="https://linkedin.com/in/jaimintadvi" 
-            target="_blank" 
-            referrerPolicy="no-referrer"
-            className="p-3 bg-white/5 border border-white/5 hover:border-white/20 hover:bg-white/10 text-slate-400 hover:text-indigo-400 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
-          >
-            <Linkedin className="h-5 w-5" />
-          </a>
+          <Magnetic strength={0.4}>
+            <a 
+              href="https://github.com/jaimintadvi" 
+              target="_blank" 
+              referrerPolicy="no-referrer"
+              className="p-3 bg-white/5 border border-white/5 hover:border-white/20 hover:bg-white/10 text-slate-400 hover:text-indigo-400 rounded-full transition-all duration-300 hover:scale-110 shadow-lg block"
+            >
+              <Github className="h-5 w-5" />
+            </a>
+          </Magnetic>
+          <Magnetic strength={0.4}>
+            <a 
+              href="https://linkedin.com/in/jaimintadvi" 
+              target="_blank" 
+              referrerPolicy="no-referrer"
+              className="p-3 bg-white/5 border border-white/5 hover:border-white/20 hover:bg-white/10 text-slate-400 hover:text-indigo-400 rounded-full transition-all duration-300 hover:scale-110 shadow-lg block"
+            >
+              <Linkedin className="h-5 w-5" />
+            </a>
+          </Magnetic>
         </motion.div>
       </motion.div>
 

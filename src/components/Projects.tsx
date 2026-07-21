@@ -1,6 +1,7 @@
 import { Github, ExternalLink, Code2, ShoppingBag, Users, CloudSun, ArrowUpRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import { projectsData } from '../data';
+import TiltSpotlightCard from './TiltSpotlightCard';
 
 // Helper to render responsive customized CSS vector illustrations based on project type
 function renderProjectVisual(imageName: string) {
@@ -147,13 +148,11 @@ export default function Projects() {
       {/* Project Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {projectsData.map((project, index) => (
-          <motion.div
+          <TiltSpotlightCard
             key={project.title}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: index * 0.15 }}
-            className="group glass-card rounded-3xl overflow-hidden hover:border-indigo-500/40 hover:shadow-[0_15px_35px_rgba(99,102,241,0.2)] transition-all duration-500 flex flex-col h-full"
+            delay={index * 0.15}
+            yOffset={40}
+            className="glass-card rounded-3xl overflow-hidden border border-white/5 hover:border-indigo-500/30 hover:shadow-[0_20px_40px_rgba(99,102,241,0.15)] flex flex-col h-full cursor-pointer font-sans"
           >
             {/* Top Showcase Frame */}
             <div className="relative h-48 w-full border-b border-white/5 overflow-hidden">
@@ -213,7 +212,7 @@ export default function Projects() {
                 </a>
               </div>
             </div>
-          </motion.div>
+          </TiltSpotlightCard>
         ))}
       </div>
     </section>

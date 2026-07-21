@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { MessageSquare } from 'lucide-react';
+import { motion, useScroll, useSpring } from 'motion/react';
 import AnimatedBackground from './components/AnimatedBackground';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -13,6 +14,12 @@ import Footer from './components/Footer';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   useEffect(() => {
     const sections = ['home', 'about', 'skills', 'experience', 'projects', 'achievements', 'contact'];
@@ -48,6 +55,12 @@ export default function App() {
 
   return (
     <div id="app-container" className="relative min-h-screen text-slate-100 font-sans selection:bg-indigo-500/30 selection:text-white">
+      {/* Scroll Progress Bar */}
+      <motion.div 
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 origin-left z-50 shadow-[0_0_10px_rgba(99,102,241,0.5)]"
+        style={{ scaleX }}
+      />
+
       {/* Premium floating cosmic background */}
       <AnimatedBackground />
 

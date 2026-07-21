@@ -1,6 +1,7 @@
 import { MapPin, GraduationCap, School, BookOpen } from 'lucide-react';
 import { motion } from 'motion/react';
 import { personalInfo } from '../data';
+import TiltSpotlightCard from './TiltSpotlightCard';
 
 export default function About() {
   const facts = [
@@ -25,11 +26,8 @@ export default function About() {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         {/* Left Side: Biography Card */}
-        <motion.div
-          initial={{ opacity: 0, x: -35 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ type: 'spring', stiffness: 80, damping: 15 }}
+        <TiltSpotlightCard
+          delay={0}
           className="lg:col-span-7 glass-card rounded-3xl p-8 md:p-10 flex flex-col justify-between"
         >
           <div>
@@ -55,14 +53,11 @@ export default function About() {
               <p className="text-indigo-400 font-medium text-sm">Code Vimarsh Club Web Team</p>
             </div>
           </div>
-        </motion.div>
+        </TiltSpotlightCard>
 
         {/* Right Side: Visual Avatar Platform */}
-        <motion.div
-          initial={{ opacity: 0, x: 35 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ type: 'spring', stiffness: 80, damping: 15 }}
+        <TiltSpotlightCard
+          delay={0.1}
           className="lg:col-span-5 glass-card rounded-3xl p-8 flex flex-col items-center justify-center relative overflow-hidden"
         >
           {/* Neon Orb background glowing */}
@@ -101,7 +96,7 @@ export default function About() {
             <h4 className="font-display font-bold text-lg text-white">{personalInfo.name}</h4>
             <p className="text-slate-400 text-xs mt-1">{personalInfo.university}</p>
           </div>
-        </motion.div>
+        </TiltSpotlightCard>
       </div>
 
       {/* Facts Strip / Grid */}
@@ -109,13 +104,11 @@ export default function About() {
         {facts.map((fact, index) => {
           const IconComponent = fact.icon;
           return (
-            <motion.div
+            <TiltSpotlightCard
               key={fact.label}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="glass-card rounded-2xl p-5 flex items-start gap-4 hover:border-indigo-500/30 transition-all duration-300"
+              delay={index * 0.05}
+              yOffset={20}
+              className="glass-card rounded-2xl p-5 flex flex-row items-start gap-4 hover:border-indigo-500/30 cursor-pointer"
             >
               <div className={`p-3 rounded-xl border flex-shrink-0 ${fact.color}`}>
                 <IconComponent className="h-5 w-5" />
@@ -124,7 +117,7 @@ export default function About() {
                 <p className="font-mono text-[10px] text-slate-500 tracking-wider uppercase">{fact.label}</p>
                 <p className="text-slate-300 font-medium text-xs mt-1 leading-relaxed">{fact.value}</p>
               </div>
-            </motion.div>
+            </TiltSpotlightCard>
           );
         })}
       </div>
