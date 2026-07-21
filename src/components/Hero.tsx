@@ -180,7 +180,7 @@ export default function Hero() {
         {/* Quick Social Badges */}
         <motion.div 
           variants={itemVariants}
-          className="flex items-center gap-4"
+          className="flex items-center gap-4 mb-12"
         >
           <Magnetic strength={0.4}>
             <a 
@@ -210,6 +210,29 @@ export default function Hero() {
               <Mail className="h-5 w-5" />
             </a>
           </Magnetic>
+        </motion.div>
+
+        {/* Hero Quick Stat Counter Cards (Lovable Feature) */}
+        <motion.div
+          variants={itemVariants}
+          className="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full max-w-3xl"
+        >
+          <div className="glass-card rounded-2xl p-4 border border-white/10 bg-slate-950/40 backdrop-blur-xl text-center group hover:border-indigo-500/30 transition-all">
+            <h4 className="font-display font-extrabold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">15+</h4>
+            <p className="text-[11px] font-mono text-slate-400 mt-1">Projects Built</p>
+          </div>
+          <div className="glass-card rounded-2xl p-4 border border-white/10 bg-slate-950/40 backdrop-blur-xl text-center group hover:border-purple-500/30 transition-all">
+            <h4 className="font-display font-extrabold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">120+</h4>
+            <p className="text-[11px] font-mono text-slate-400 mt-1">LeetCode Solved</p>
+          </div>
+          <div className="glass-card rounded-2xl p-4 border border-white/10 bg-slate-950/40 backdrop-blur-xl text-center group hover:border-cyan-500/30 transition-all">
+            <h4 className="font-display font-extrabold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">480+</h4>
+            <p className="text-[11px] font-mono text-slate-400 mt-1">GitHub Commits</p>
+          </div>
+          <div className="glass-card rounded-2xl p-4 border border-white/10 bg-slate-950/40 backdrop-blur-xl text-center group hover:border-amber-500/30 transition-all">
+            <h4 className="font-display font-extrabold text-2xl text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-rose-400">4+ Yrs</h4>
+            <p className="text-[11px] font-mono text-slate-400 mt-1">Coding & Systems</p>
+          </div>
         </motion.div>
       </motion.div>
 

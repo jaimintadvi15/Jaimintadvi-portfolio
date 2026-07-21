@@ -25,10 +25,11 @@ export default function Navbar({ activeSection }: NavbarProps) {
   const navItems = [
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
+    { label: 'Pathways', href: '#pathways' },
     { label: 'Skills', href: '#skills' },
-    { label: 'Experience', href: '#experience' },
     { label: 'Projects', href: '#projects' },
-    { label: 'Achievements', href: '#achievements' },
+    { label: 'Stats', href: '#stats' },
+    { label: 'Terminal', href: '#terminal' },
     { label: 'Contact', href: '#contact' },
   ];
 

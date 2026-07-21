@@ -4,9 +4,13 @@ import AnimatedBackground from './components/AnimatedBackground';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import Timeline from './components/Timeline';
 import Projects from './components/Projects';
+import GithubHeatmap from './components/GithubHeatmap';
+import TerminalPlayground from './components/TerminalPlayground';
 import Achievements from './components/Achievements';
 import Contact from './components/Contact';
+import AudioWidget from './components/AudioWidget';
 import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
 
@@ -20,11 +24,22 @@ export default function App() {
   });
 
   useEffect(() => {
-    const sections = ['home', 'about', 'skills', 'experience', 'projects', 'achievements', 'contact'];
+    const sections = [
+      'home',
+      'about',
+      'pathways',
+      'skills',
+      'experience',
+      'projects',
+      'stats',
+      'terminal',
+      'achievements',
+      'contact'
+    ];
     
     const observerOptions = {
       root: null,
-      rootMargin: '-30% 0px -40% 0px', // Triggers when section is largely in middle of view
+      rootMargin: '-30% 0px -40% 0px',
       threshold: 0,
     };
 
@@ -59,34 +74,46 @@ export default function App() {
         style={{ scaleX }}
       />
 
-      {/* Premium floating cosmic background */}
+      {/* Floating cosmic background */}
       <AnimatedBackground />
 
       {/* Floating Centered Pill Navbar */}
       <Navbar activeSection={activeSection} />
 
       {/* Main Single Page Sections */}
-      <main className="relative z-10 w-full">
-        {/* Hero Banner Section */}
+      <main className="relative z-10 w-full space-y-8">
+        {/* 1. Hero Banner Section */}
         <Hero />
 
-        {/* About Me Section */}
+        {/* 2. Pathways & Milestones Timeline */}
+        <Timeline />
+
+        {/* 3. About Me Section (with Interactive Tech Orbit) */}
         <About activeSection={activeSection} />
 
-        {/* Creative Projects Showcase */}
+        {/* 4. Creative Projects Showcase */}
         <Projects />
 
-        {/* Milestones & Achievements Vertical Tracker */}
+        {/* 5. GitHub Heatmap & Algorithmic Stats */}
+        <GithubHeatmap />
+
+        {/* 6. Interactive CLI Terminal Playground */}
+        <TerminalPlayground />
+
+        {/* 7. Milestones & Achievements Vertical Tracker */}
         <Achievements />
 
-        {/* Contact Form with real-time feedback */}
+        {/* 8. Contact Form */}
         <Contact />
       </main>
+
+      {/* Ambient Sound Audio Widget */}
+      <AudioWidget />
 
       {/* Footer Area */}
       <Footer />
 
-      {/* AI Chatbot for queries */}
+      {/* AI Chatbot */}
       <Chatbot />
     </div>
   );
