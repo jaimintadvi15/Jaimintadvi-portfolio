@@ -81,14 +81,14 @@ export default function Hero() {
       case 'help':
         response = (
           <div className="space-y-1 text-slate-300">
-            <p className="text-rose-400 font-semibold">Available Shell Commands:</p>
-            <p><span className="text-emerald-400 font-bold">skills</span> - Technical skills &amp; frameworks</p>
-            <p><span className="text-emerald-400 font-bold">about</span> - Background &amp; engineering degree</p>
-            <p><span className="text-emerald-400 font-bold">why-me</span> - Core technical advantages</p>
-            <p><span className="text-emerald-400 font-bold">projects</span> - Top featured web builds</p>
-            <p><span className="text-emerald-400 font-bold">achievements</span> - Milestones &amp; hackathons</p>
-            <p><span className="text-emerald-400 font-bold">contact</span> - Email, GitHub &amp; LinkedIn</p>
-            <p><span className="text-emerald-400 font-bold">clear</span> - Clear terminal screen</p>
+            <p className="text-cyan-400 font-semibold">Available Shell Commands:</p>
+            <p><span className="text-teal-300 font-bold">skills</span> - Technical skills &amp; frameworks</p>
+            <p><span className="text-teal-300 font-bold">about</span> - Background &amp; engineering degree</p>
+            <p><span className="text-teal-300 font-bold">why-me</span> - Core technical advantages</p>
+            <p><span className="text-teal-300 font-bold">projects</span> - Top featured web builds</p>
+            <p><span className="text-teal-300 font-bold">achievements</span> - Milestones &amp; hackathons</p>
+            <p><span className="text-teal-300 font-bold">contact</span> - Email, GitHub &amp; LinkedIn</p>
+            <p><span className="text-teal-300 font-bold">clear</span> - Clear terminal screen</p>
           </div>
         );
         break;
@@ -96,7 +96,7 @@ export default function Hero() {
       case 'skills':
         response = (
           <div className="space-y-1 text-slate-300">
-            <p className="text-rose-400 font-semibold">🚀 Tech Stack &amp; Languages:</p>
+            <p className="text-cyan-400 font-semibold">🚀 Tech Stack &amp; Languages:</p>
             <p>• <span className="text-white font-medium">Languages:</span> C++, C, Java, HTML5, CSS3, JavaScript</p>
             <p>• <span className="text-white font-medium">Frontend:</span> React.js, Tailwind CSS, Vite, Framer Motion</p>
             <p>• <span className="text-white font-medium">Backend &amp; Tools:</span> Node.js, Express, Git, GitHub, VS Code</p>
@@ -107,7 +107,7 @@ export default function Hero() {
       case 'about':
         response = (
           <div className="space-y-1 text-slate-300">
-            <p className="text-rose-400 font-semibold">🎓 About Jaimin Tadvi:</p>
+            <p className="text-cyan-400 font-semibold">🎓 About Jaimin Tadvi:</p>
             <p>• B.E. Computer Science &amp; Engineering @ MSU Baroda</p>
             <p>• Web Team Member @ Code Vimarsh Club</p>
             <p>• Focused on high-performance full-stack web applications &amp; clean code.</p>
@@ -118,7 +118,7 @@ export default function Hero() {
       case 'why-me':
         response = (
           <div className="space-y-1 text-slate-300">
-            <p className="text-rose-400 font-semibold">⚡ Why Choose Jaimin:</p>
+            <p className="text-cyan-400 font-semibold">⚡ Why Choose Jaimin:</p>
             <p>1. Fast learner with strong DSA &amp; algorithmic fundamentals (MSU Rank 12)</p>
             <p>2. Experienced in hackathon builds &amp; collaborative web team projects</p>
             <p>3. Obsessed with pixel-perfect, accessible UI &amp; modern design systems</p>
@@ -129,7 +129,7 @@ export default function Hero() {
       case 'projects':
         response = (
           <div className="space-y-1 text-slate-300">
-            <p className="text-rose-400 font-semibold">💻 Featured Projects:</p>
+            <p className="text-cyan-400 font-semibold">💻 Featured Projects:</p>
             <p>• <span className="text-white font-bold">Developer Portfolio:</span> Futuristic dark glassmorphic interactive web app</p>
             <p>• <span className="text-white font-bold">E-Commerce UI Clone:</span> React Context engine &amp; modern shopping flow</p>
             <p>• <span className="text-white font-bold">Student Management System:</span> Full CRUD portal with Node.js &amp; MongoDB</p>
@@ -141,7 +141,7 @@ export default function Hero() {
       case 'achievements':
         response = (
           <div className="space-y-1 text-slate-300">
-            <p className="text-rose-400 font-semibold">🏆 Key Achievements:</p>
+            <p className="text-cyan-400 font-semibold">🏆 Key Achievements:</p>
             <p>• Code Vimarsh Web Team Member Induction (2024)</p>
             <p>• MSU Algorithmic Coding Showdown - Rank 12 / 150+</p>
             <p>• Inter-College Hackathon Top Contributor</p>
@@ -152,10 +152,10 @@ export default function Hero() {
       case 'contact':
         response = (
           <div className="space-y-1 text-slate-300">
-            <p className="text-rose-400 font-semibold">📫 Get in Touch:</p>
-            <p>• Email: <a href="mailto:jaimintadvi15@gmail.com" className="text-rose-400 underline">jaimintadvi15@gmail.com</a></p>
-            <p>• GitHub: <a href="https://github.com/jaimintadvi" target="_blank" rel="noreferrer" className="text-rose-400 underline">github.com/jaimintadvi</a></p>
-            <p>• LinkedIn: <a href="https://linkedin.com/in/jaimintadvi" target="_blank" rel="noreferrer" className="text-rose-400 underline">linkedin.com/in/jaimintadvi</a></p>
+            <p className="text-cyan-400 font-semibold">📫 Get in Touch:</p>
+            <p>• Email: <a href="mailto:jaimintadvi15@gmail.com" className="text-cyan-400 underline">jaimintadvi15@gmail.com</a></p>
+            <p>• GitHub: <a href="https://github.com/jaimintadvi" target="_blank" rel="noreferrer" className="text-cyan-400 underline">github.com/jaimintadvi</a></p>
+            <p>• LinkedIn: <a href="https://linkedin.com/in/jaimintadvi" target="_blank" rel="noreferrer" className="text-cyan-400 underline">linkedin.com/in/jaimintadvi</a></p>
           </div>
         );
         break;
@@ -200,32 +200,32 @@ export default function Hero() {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 pb-16 scroll-mt-28 overflow-hidden bg-[#060609]"
+      className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-24 pb-16 scroll-mt-28 overflow-hidden bg-transparent"
     >
       {/* Background Grid Texture */}
       <div 
-        className="absolute inset-0 pointer-events-none opacity-20" 
+        className="absolute inset-0 pointer-events-none opacity-15" 
         style={{
-          backgroundImage: `radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(rgba(0, 242, 254, 0.15) 1px, transparent 1px), linear-gradient(to right, rgba(0, 242, 254, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(168, 85, 247, 0.04) 1px, transparent 1px)`,
           backgroundSize: '40px 40px, 40px 40px, 40px 40px'
         }}
       />
 
-      {/* Ambient Red Glows */}
-      <div className="absolute top-1/4 left-10 w-96 h-96 bg-rose-600/10 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-rose-900/15 blur-[140px] rounded-full pointer-events-none" />
+      {/* Ambient Cosmic Cyan & Purple Glows */}
+      <div className="absolute top-1/4 left-10 w-96 h-96 bg-cyan-500/10 blur-[130px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-600/15 blur-[140px] rounded-full pointer-events-none" />
 
       {/* Faint Background Code Watermarks */}
-      <div className="absolute top-12 left-10 text-[11px] font-mono text-slate-800/60 pointer-events-none select-none hidden md:block">
+      <div className="absolute top-12 left-10 text-[11px] font-mono text-cyan-500/20 pointer-events-none select-none hidden md:block">
         const user = &quot;{personalInfo.name}&quot;;
       </div>
-      <div className="absolute top-16 right-16 text-[11px] font-mono text-slate-800/60 pointer-events-none select-none hidden md:block">
+      <div className="absolute top-16 right-16 text-[11px] font-mono text-purple-400/20 pointer-events-none select-none hidden md:block">
         01101001
       </div>
-      <div className="absolute bottom-12 left-12 text-[11px] font-mono text-slate-800/60 pointer-events-none select-none hidden md:block">
+      <div className="absolute bottom-12 left-12 text-[11px] font-mono text-teal-400/20 pointer-events-none select-none hidden md:block">
         &lt;React.StrictMode&gt;
       </div>
-      <div className="absolute bottom-16 right-24 text-[11px] font-mono text-slate-800/60 pointer-events-none select-none hidden md:block">
+      <div className="absolute bottom-16 right-24 text-[11px] font-mono text-cyan-400/20 pointer-events-none select-none hidden md:block">
         model.fit(X, y)
       </div>
 
@@ -239,10 +239,10 @@ export default function Hero() {
           className="lg:col-span-7 flex flex-col items-start text-left space-y-6"
         >
           {/* Status Badge Tag */}
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#18090e] border border-[#3e121d] text-[#ff4d6d] text-xs font-mono font-bold tracking-wider uppercase shadow-[0_0_20px_rgba(255,77,109,0.15)]">
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#070918]/90 border border-cyan-500/30 text-cyan-400 text-xs font-mono font-bold tracking-wider uppercase shadow-[0_0_20px_rgba(6,182,212,0.25)]">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-500 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
             </span>
             $ NPM RUN START:DEV
           </div>
@@ -250,7 +250,7 @@ export default function Hero() {
           {/* Main Headline */}
           <h1 className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white leading-[1.1]">
             Hi, I&apos;m {firstName}{' '}
-            <span className="bg-gradient-to-r from-red-500 via-rose-500 to-red-400 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(244,63,94,0.3)]">
+            <span className="bg-gradient-to-r from-cyan-400 via-teal-300 to-purple-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(6,182,212,0.4)]">
               {lastName}
             </span>
           </h1>
@@ -258,24 +258,24 @@ export default function Hero() {
           {/* Dynamic Monospace Role Line */}
           <div className="text-xl sm:text-2xl font-mono text-slate-200 font-medium">
             I am a{' '}
-            <span className="text-[#ff3b5c] font-bold underline decoration-rose-500/40 underline-offset-4">
+            <span className="bg-gradient-to-r from-cyan-300 via-teal-300 to-purple-300 bg-clip-text text-transparent font-bold underline decoration-cyan-500/40 underline-offset-4">
               {displayText}
             </span>
-            <span className="animate-pulse text-[#ff3b5c] font-bold ml-0.5">|</span>
+            <span className="animate-pulse text-cyan-400 font-bold ml-0.5">|</span>
           </div>
 
           {/* Bio Description */}
           <p className="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl font-sans">
-            Engineering student at MSU Baroda passionate about full-stack systems, machine learning pipelines, and smart agricultural automation. Thriving in high-stress hackathons and team-focused builds.
+            Engineering student at MSU Baroda passionate about full-stack web systems, modern UI/UX design, and clean scalable software architectures. Thriving in hackathons and team-focused builds.
           </p>
 
           {/* Compiler Message Directive Box */}
-          <div className="w-full max-w-xl rounded-xl bg-[#0b0c12]/90 border border-[#202130] p-4 sm:p-5 font-mono shadow-2xl relative overflow-hidden backdrop-blur-md">
-            <div className="text-[#ff4d6d] text-xs font-bold tracking-wider mb-2 flex items-center gap-1.5">
+          <div className="w-full max-w-xl rounded-xl bg-[#090b18]/90 border border-indigo-500/30 p-4 sm:p-5 font-mono shadow-2xl relative overflow-hidden backdrop-blur-md">
+            <div className="text-cyan-400 text-xs font-bold tracking-wider mb-2 flex items-center gap-1.5">
               // COMPILER MESSAGE DIRECTIVE
             </div>
             <p className="text-slate-200 text-sm sm:text-base italic tracking-wide">
-              &quot;I don&apos;t build prototypes. I build products that ship. 🚀&quot;
+              &quot;Driven by relentless curiosity, obsessed with clean architecture, and built to transform complex ideas into high-impact software. ⚡&quot;
             </p>
           </div>
 
@@ -284,7 +284,7 @@ export default function Hero() {
             <Magnetic>
               <a
                 href="#achievements"
-                className="group relative inline-flex items-center gap-2 rounded-full px-7 py-3.5 bg-[#1e0a11] hover:bg-[#2b0e18] border border-[#6b1a2b] hover:border-[#ff3b5c] text-white font-semibold text-sm transition-all duration-300 shadow-[0_0_25px_rgba(244,63,94,0.25)] hover:shadow-[0_0_35px_rgba(244,63,94,0.45)] hover:-translate-y-0.5"
+                className="group relative inline-flex items-center gap-2 rounded-full px-7 py-3.5 bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-semibold text-sm transition-all duration-300 shadow-[0_0_25px_rgba(6,182,212,0.35)] hover:shadow-[0_0_35px_rgba(168,85,247,0.5)] hover:-translate-y-0.5"
               >
                 <span>View Achievements</span>
                 <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
@@ -294,7 +294,7 @@ export default function Hero() {
             <Magnetic>
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 bg-[#10111a] hover:bg-[#181a28] border border-slate-800 hover:border-slate-700 text-slate-200 hover:text-white font-semibold text-sm transition-all duration-300 hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 bg-[#0e1020] hover:bg-[#161830] border border-cyan-500/30 hover:border-cyan-400 text-slate-200 hover:text-white font-semibold text-sm transition-all duration-300 hover:-translate-y-0.5"
               >
                 <span>Let&apos;s Connect</span>
                 <span className="text-base">👏</span>
@@ -310,17 +310,17 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
           className="lg:col-span-5 w-full flex justify-center lg:justify-end"
         >
-          <div className="w-full max-w-xl rounded-2xl border border-[#1f202e] bg-[#090a10]/95 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.85)] overflow-hidden font-mono text-left">
+          <div className="w-full max-w-xl rounded-2xl border border-cyan-500/25 bg-[#080916]/95 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.85)] overflow-hidden font-mono text-left">
             
             {/* Window Top Title Bar */}
-            <div className="px-4 py-3 bg-[#0d0e17] border-b border-[#1b1c2b] flex items-center justify-between">
+            <div className="px-4 py-3 bg-[#0d0f20] border-b border-cyan-500/20 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-[#ff5f56] inline-block" />
                 <span className="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block" />
                 <span className="w-3 h-3 rounded-full bg-[#27c93f] inline-block" />
 
-                <span className="ml-3 inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-mono uppercase tracking-wider font-bold">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="ml-3 inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-[10px] font-mono uppercase tracking-wider font-bold">
+                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
                   [LIVE LINK]
                 </span>
 
@@ -334,22 +334,22 @@ export default function Hero() {
                 title="Copy shell line"
                 className="text-slate-400 hover:text-white text-xs flex items-center gap-1 bg-white/5 hover:bg-white/10 px-2 py-1 rounded transition-colors"
               >
-                {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                {copied ? <Check className="w-3.5 h-3.5 text-cyan-400" /> : <Copy className="w-3.5 h-3.5" />}
               </button>
             </div>
 
             {/* Terminal Body Log */}
             <div 
               ref={terminalLogsRef}
-              className="p-4 space-y-3 text-xs font-mono min-h-[250px] max-h-[340px] overflow-y-auto custom-scrollbar bg-[#08090f]"
+              className="p-4 space-y-3 text-xs font-mono min-h-[250px] max-h-[340px] overflow-y-auto custom-scrollbar bg-[#060712]"
             >
               {/* Default Welcome Command & Card */}
               <div className="flex items-center gap-2 text-slate-300">
                 <span className="text-slate-400">jaimin@portfolio:~$</span>
-                <span className="text-[#ff4d6d] font-bold">help</span>
+                <span className="text-cyan-400 font-bold">help</span>
               </div>
 
-              <div className="bg-[#10111a] border border-[#202130] rounded-xl p-3.5 space-y-1.5 text-slate-300 shadow-inner">
+              <div className="bg-[#0e1022] border border-cyan-500/20 rounded-xl p-3.5 space-y-1.5 text-slate-300 shadow-inner">
                 <p className="font-semibold text-slate-100">Welcome to Jaimin&apos;s Portfolio interactive shell!</p>
                 <p className="text-slate-400 text-xs">Type or click a command below to explore.</p>
               </div>
@@ -359,9 +359,9 @@ export default function Hero() {
                 <div key={item.id} className="space-y-2 pt-1">
                   <div className="flex items-center gap-2 text-slate-300">
                     <span className="text-slate-400">jaimin@portfolio:~$</span>
-                    <span className="text-[#ff4d6d] font-bold">{item.command}</span>
+                    <span className="text-cyan-400 font-bold">{item.command}</span>
                   </div>
-                  <div className="pl-3 border-l-2 border-rose-500/30 py-1">
+                  <div className="pl-3 border-l-2 border-cyan-500/40 py-1">
                     {item.response}
                   </div>
                 </div>
@@ -369,7 +369,7 @@ export default function Hero() {
             </div>
 
             {/* Quick Shell Command Chips */}
-            <div className="px-4 py-2.5 bg-[#0b0c14] border-t border-b border-[#1b1c2b] flex flex-wrap items-center gap-2">
+            <div className="px-4 py-2.5 bg-[#0a0c1a] border-t border-b border-cyan-500/20 flex flex-wrap items-center gap-2">
               <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-wider mr-1">
                 QUICK SHELL:
               </span>
@@ -377,7 +377,7 @@ export default function Hero() {
                 <button
                   key={cmd}
                   onClick={() => executeCommand(cmd)}
-                  className="px-2.5 py-1 rounded-md bg-[#141522] hover:bg-[#200c15] border border-[#232435] hover:border-[#ff3b5c]/50 text-slate-300 hover:text-[#ff4d6d] text-[11px] font-mono transition-all hover:scale-105 cursor-pointer"
+                  className="px-2.5 py-1 rounded-md bg-[#101226] hover:bg-[#181a38] border border-cyan-500/20 hover:border-cyan-400/60 text-slate-300 hover:text-cyan-300 text-[11px] font-mono transition-all hover:scale-105 cursor-pointer"
                 >
                   {cmd}
                 </button>
@@ -385,8 +385,8 @@ export default function Hero() {
             </div>
 
             {/* Terminal Command Input */}
-            <form onSubmit={handleTerminalSubmit} className="px-4 py-3 bg-[#07080d] flex items-center gap-2">
-              <span className="text-[#ff3b5c] font-bold text-sm font-mono">$</span>
+            <form onSubmit={handleTerminalSubmit} className="px-4 py-3 bg-[#060712] flex items-center gap-2">
+              <span className="text-cyan-400 font-bold text-sm font-mono">$</span>
               <input
                 type="text"
                 value={terminalInput}

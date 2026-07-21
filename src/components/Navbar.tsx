@@ -25,8 +25,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
   const navItems = [
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
-    { label: 'Expertise', href: '#pathways' },
-    { label: 'Tech Stack', href: '#skills' },
+    { label: 'Web Orbit', href: '#skill-orbit' },
     { label: 'Why Me', href: '#why-me' },
     { label: 'Projects', href: '#projects' },
     { label: 'Certificates', href: '#achievements' },
@@ -45,12 +44,11 @@ export default function Navbar({ activeSection }: NavbarProps) {
       >
         {/* Logo / Brand Name */}
         <a href="#home" className="flex items-center gap-2 group flex-shrink-0">
-          <div className="relative flex h-8 w-8 items-center justify-center rounded-full bg-purple-600/20 border border-purple-500/30 group-hover:bg-purple-600/40 group-hover:border-purple-400 transition-all duration-300 shadow-[0_0_15px_rgba(147,51,234,0.15)]">
-            <span className="font-mono text-xs font-bold text-purple-400 group-hover:text-purple-300 transition-colors">&gt;_</span>
-            <div className="absolute inset-0 rounded-full bg-purple-400/20 blur-sm scale-0 group-hover:scale-100 transition-all duration-300" />
+          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-cyan-500/10 border border-cyan-500/30 group-hover:bg-cyan-500/20 group-hover:border-cyan-400 transition-all duration-300 shadow-[0_0_15px_rgba(6,182,212,0.2)]">
+            <span className="font-mono text-xs font-bold text-cyan-400">&gt;_</span>
           </div>
           <span className="font-display font-bold text-base tracking-tight text-white transition-all whitespace-nowrap">
-            Jaimin<span className="text-cyan-400">.T</span>
+            Jaimin<span className="text-cyan-400 font-bold">.T</span>
           </span>
         </a>
 
@@ -63,17 +61,17 @@ export default function Navbar({ activeSection }: NavbarProps) {
                 <a
                   href={item.href}
                   className={`group relative text-[11px] font-medium tracking-wider uppercase px-3 py-2 flex items-center justify-center whitespace-nowrap transition-colors duration-300 ease-in-out hover:text-white ${
-                    isActive ? 'text-indigo-400 font-semibold' : 'text-slate-400'
+                    isActive ? 'text-cyan-400 font-bold' : 'text-slate-400'
                   }`}
                 >
                   <span className="whitespace-nowrap">{item.label}</span>
-                  {/* Smooth Gradient Underline */}
-                  <span className={`absolute bottom-0 h-[2px] bg-gradient-to-r from-blue-400 to-indigo-500 transition-all duration-300 ease-in-out ${isActive ? 'w-4' : 'w-0 group-hover:w-4'}`} />
+                  {/* Smooth Cyan-Purple Gradient Underline */}
+                  <span className={`absolute bottom-0 h-[2px] bg-gradient-to-r from-cyan-400 to-purple-500 transition-all duration-300 ease-in-out ${isActive ? 'w-5' : 'w-0 group-hover:w-5'}`} />
 
                   {isActive && (
                     <motion.span
                       layoutId="activeNavIndicator"
-                      className="absolute inset-0 bg-indigo-500/10 border border-indigo-500/20 rounded-full -z-10"
+                      className="absolute inset-0 bg-cyan-500/10 border border-cyan-500/20 rounded-full -z-10"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}

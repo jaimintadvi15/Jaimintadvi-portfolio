@@ -138,11 +138,11 @@ export default function Projects() {
       <div className="text-center mb-16">
         <h2 className="font-display font-bold text-3xl md:text-5xl text-white tracking-tight mb-4">
           Featured{" "}
-          <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-cyan-400 via-teal-300 to-purple-400 bg-clip-text text-transparent">
             Projects
           </span>
         </h2>
-        <div className="h-1 w-20 bg-indigo-500 mx-auto rounded-full" />
+        <div className="h-1 w-20 bg-gradient-to-r from-cyan-400 via-teal-400 to-purple-500 mx-auto rounded-full shadow-[0_0_15px_rgba(6,182,212,0.4)]" />
       </div>
 
       {/* Project Grid */}

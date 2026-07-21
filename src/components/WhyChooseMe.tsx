@@ -68,7 +68,7 @@ export default function WhyChooseMe() {
         </div>
         <h2 className="font-display font-extrabold text-3xl md:text-4xl text-white tracking-tight">
           Why Choose{" "}
-          <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-cyan-400 via-teal-300 to-purple-400 bg-clip-text text-transparent">
             Jaimin?
           </span>
         </h2>
