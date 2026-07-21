@@ -5,6 +5,8 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Timeline from './components/Timeline';
+import TechStackMarquee from './components/TechStackMarquee';
+import WhyChooseMe from './components/WhyChooseMe';
 import Projects from './components/Projects';
 import GithubHeatmap from './components/GithubHeatmap';
 import TerminalPlayground from './components/TerminalPlayground';
@@ -29,7 +31,7 @@ export default function App() {
       'about',
       'pathways',
       'skills',
-      'experience',
+      'why-me',
       'projects',
       'stats',
       'terminal',
@@ -80,37 +82,43 @@ export default function App() {
       {/* Floating Centered Pill Navbar */}
       <Navbar activeSection={activeSection} />
 
-      {/* Main Single Page Sections */}
+      {/* Main Single Page Sections in Reference Sequence */}
       <main className="relative z-10 w-full space-y-8">
-        {/* 1. Hero Banner Section */}
+        {/* 1. Hero Section */}
         <Hero />
 
-        {/* 2. Pathways & Milestones Timeline */}
-        <Timeline />
-
-        {/* 3. About Me Section (with Interactive Tech Orbit) */}
+        {/* 2. About Me Section */}
         <About activeSection={activeSection} />
 
-        {/* 4. Creative Projects Showcase */}
+        {/* 3. Pathways & Milestones / Technical Expertise */}
+        <Timeline />
+
+        {/* 4. Technologies I Build With (Circular Glowing Grid + 3D Orbit Toggle) */}
+        <TechStackMarquee />
+
+        {/* 5. Why Choose Jaimin? (Pillars of Value) */}
+        <WhyChooseMe />
+
+        {/* 6. Creative Projects Showcase */}
         <Projects />
 
-        {/* 5. GitHub Heatmap & Algorithmic Stats */}
+        {/* 7. GitHub Heatmap & Algorithmic Stats */}
         <GithubHeatmap />
 
-        {/* 6. Interactive CLI Terminal Playground */}
+        {/* 8. Interactive CLI Terminal Playground */}
         <TerminalPlayground />
 
-        {/* 7. Milestones & Achievements Vertical Tracker */}
+        {/* 9. Latest Achievements & Certificates Grid */}
         <Achievements />
 
-        {/* 8. Contact Form */}
+        {/* 10. Contact Form */}
         <Contact />
       </main>
 
       {/* Ambient Sound Audio Widget */}
       <AudioWidget />
 
-      {/* Footer Area */}
+      {/* Footer Area with Watermark */}
       <Footer />
 
       {/* AI Chatbot */}
