@@ -1,10 +1,8 @@
-import { useRef } from 'react';
-import { Trophy, Award, Star, Users, Calendar } from 'lucide-react';
-import { motion, useScroll, useSpring } from 'motion/react';
+import React from 'react';
+import { Trophy, Award, Star, Users, Calendar, CheckCircle, ExternalLink, ShieldCheck } from 'lucide-react';
 import { achievementsData } from '../data';
 import TiltSpotlightCard from './TiltSpotlightCard';
 
-// Helper to resolve specific milestone icons
 function getAchievementIcon(type: string) {
   switch (type) {
     case 'trophy':
@@ -21,103 +19,81 @@ function getAchievementIcon(type: string) {
 }
 
 export default function Achievements() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  
-  // Track scroll progress of the timeline container relative to the viewport
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start 65%", "end 65%"]
-  });
-
-  // Smooth the scroll progress values using a spring physics effect
-  const scaleY = useSpring(scrollYProgress, {
-    stiffness: 80,
-    damping: 25,
-    restDelta: 0.001
-  });
-
   return (
-    <section id="achievements" className="py-24 px-4 max-w-6xl mx-auto scroll-mt-20 overflow-hidden">
+    <section id="achievements" className="py-24 px-4 max-w-6xl mx-auto scroll-mt-20 relative">
+      {/* Background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-600/10 rounded-full blur-[140px] pointer-events-none -z-10" />
+
       {/* Section Header */}
-      <div className="text-center mb-20">
-        <h2 className="font-display font-bold text-3xl md:text-5xl text-white tracking-tight mb-4">
-          Milestones &{" "}
-          <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
+      <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono mb-4">
+          <ShieldCheck className="w-3.5 h-3.5" />
+          <span>RECOGNITION & CERTIFICATIONS</span>
+        </div>
+        <h2 className="font-display font-extrabold text-3xl md:text-4xl text-white tracking-tight">
+          Latest{" "}
+          <span className="bg-gradient-to-r from-purple-400 via-indigo-400 to-cyan-400 bg-clip-text text-transparent">
             Achievements
           </span>
         </h2>
-        <div className="h-1 w-20 bg-indigo-500 mx-auto rounded-full" />
+        <p className="text-slate-400 text-sm mt-3 leading-relaxed">
+          Official certifications, competitive programming ranks, and university hackathon recognitions.
+        </p>
       </div>
 
-      {/* Timeline Wrapper */}
-      <div ref={containerRef} className="relative">
-        {/* Background track (Desktop: Center, Mobile: Left) with soft glass border */}
-        <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[6px] bg-slate-900/60 border border-white/5 rounded-full -translate-x-1/2 backdrop-blur-[2px]" />
-
-        {/* Dynamic active connecting line: Ambient Glow blur layer */}
-        <motion.div 
-          style={{ scaleY }}
-          className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[8px] bg-gradient-to-b from-indigo-500 via-purple-500 to-pink-500 -translate-x-1/2 origin-top blur-[4px] z-10 opacity-70"
-        />
-
-        {/* Dynamic active connecting line: Sharp glowing core line */}
-        <motion.div 
-          style={{ scaleY }}
-          className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-indigo-400 via-purple-400 to-pink-400 -translate-x-1/2 origin-top z-10 shadow-[0_0_12px_rgba(99,102,241,1)]"
-        />
-
-        {/* List of achievements */}
-        <div className="space-y-12 md:space-y-8">
-          {achievementsData.map((ach, index) => {
-            const isLeft = index % 2 === 0;
-            return (
-              <div 
-                key={ach.title} 
-                className={`flex flex-col md:flex-row items-stretch w-full relative ${
-                  isLeft ? 'md:justify-start' : 'md:justify-end'
-                }`}
-              >
-                {/* Timeline node icon with frosted glass appearance and entry spring transition */}
-                <motion.div 
-                  initial={{ scale: 0.7, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                  className="absolute left-4 md:left-1/2 top-6 -translate-x-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/5 backdrop-blur-lg border border-white/10 shadow-[0_4px_16px_rgba(0,0,0,0.5),0_0_12px_rgba(99,102,241,0.3)] hover:border-indigo-400/60 transition-all duration-300 z-20"
-                >
+      {/* 2-Column Grid of Certificate / Achievement Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {achievementsData.map((ach, index) => (
+          <TiltSpotlightCard
+            key={ach.title}
+            delay={index * 0.1}
+            yOffset={20}
+            className="glass-card rounded-3xl border border-white/5 bg-slate-950/40 backdrop-blur-xl overflow-hidden hover:border-purple-500/30 transition-all duration-300 flex flex-col justify-between group"
+          >
+            {/* Top Certificate Header Banner Frame */}
+            <div className="relative p-6 border-b border-white/5 bg-gradient-to-r from-purple-950/20 via-indigo-950/20 to-slate-950/40 flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <div className="p-3 rounded-2xl bg-white/5 border border-white/10 group-hover:scale-110 transition-transform">
                   {getAchievementIcon(ach.iconType)}
-                </motion.div>
-
-                {/* Timeline Card with 3D Tilt and Mouse Spotlight (Frosted Glass) */}
-                <TiltSpotlightCard
-                  delay={index * 0.1}
-                  yOffset={20}
-                  className={`w-full md:w-[calc(50%-2rem)] pl-12 md:pl-0 glass-card rounded-3xl p-6 md:p-8 hover:border-indigo-500/30 transition-all duration-300 relative group overflow-hidden ${
-                    isLeft ? 'md:pr-8 md:pl-0' : 'md:pl-8'
-                  }`}
-                >
-                  {/* Tiny neon border marker */}
-                  <div className="absolute top-0 bottom-0 left-0 w-[3px] bg-indigo-500/40" />
-
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-                    <h3 className="font-display font-bold text-lg md:text-xl text-white group-hover:text-indigo-300 transition-colors">
-                      {ach.title}
-                    </h3>
-                    {/* Date Badge */}
-                    <span className="inline-flex items-center gap-1 text-[10px] font-mono text-slate-500 whitespace-nowrap">
-                      <Calendar className="h-3 w-3" />
-                      <span>{ach.date}</span>
-                    </span>
-                  </div>
-
-                  <p className="text-slate-400 text-sm leading-relaxed">
-                    {ach.description}
-                  </p>
-                </TiltSpotlightCard>
+                </div>
+                <div>
+                  <span className="text-[10px] font-mono font-semibold text-purple-400 tracking-wider uppercase block">
+                    Verified Credential
+                  </span>
+                  <h3 className="font-display font-bold text-lg text-white group-hover:text-purple-300 transition-colors">
+                    {ach.title}
+                  </h3>
+                </div>
               </div>
-            );
-          })}
-        </div>
+
+              {/* Verified Badge */}
+              <div className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-mono font-semibold">
+                <CheckCircle className="w-3 h-3" />
+                <span>VERIFIED</span>
+              </div>
+            </div>
+
+            {/* Body Description & Date */}
+            <div className="p-6 flex-1 flex flex-col justify-between">
+              <p className="text-slate-300 text-xs md:text-sm leading-relaxed mb-6">
+                {ach.description}
+              </p>
+
+              {/* Footer Info Row */}
+              <div className="pt-4 border-t border-white/5 flex items-center justify-between text-xs font-mono text-slate-400">
+                <div className="flex items-center gap-1.5 text-slate-400">
+                  <Calendar className="w-3.5 h-3.5 text-purple-400" />
+                  <span>{ach.date}</span>
+                </div>
+
+                <div className="flex items-center gap-1 text-indigo-400 hover:text-white transition-colors cursor-pointer text-[11px]">
+                  <span>Credential Details</span>
+                  <ExternalLink className="w-3 h-3" />
+                </div>
+              </div>
+            </div>
+          </TiltSpotlightCard>
+        ))}
       </div>
     </section>
   );
