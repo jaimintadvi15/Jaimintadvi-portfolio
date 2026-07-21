@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar, ChevronRight, Code2, Briefcase, GraduationCap } from 'lucide-react';
 import { experienceData } from '../data';
+import TechOrbit from './TechOrbit';
 
 const programmingSkills = ["Python", "JavaScript", "Java", "C++", "C", "HTML5", "CSS3"];
 const frameworksSkills = ["React 19", "Next.js", "Vite", "Tailwind CSS v4", "Framer Motion", "Node.js", "Express.js", "FastAPI", "Flask"];
@@ -80,77 +81,85 @@ export default function Skills({ activeSection }: SkillsProps) {
 
         {/* 1. SKILLS VIEW */}
         {activeTab === 'skills' && (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 text-left animate-fadeIn">
-            {/* Column 1 */}
-            <div className="space-y-6">
-              {/* Programming & Web */}
-              <div>
-                <h3 className="font-mono font-bold text-sm text-red-400 mb-3 tracking-wider flex items-center gap-1.5">
-                  <span className="text-red-500">&gt;</span> PROGRAMMING & WEB
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {programmingSkills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="text-xs font-medium text-slate-300 border border-white/5 bg-[#0a0a0c] px-3 py-1.5 rounded-lg hover:border-red-500/30 hover:bg-red-500/5 transition-all duration-300 shadow-sm cursor-default"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Databases & Tools */}
-              <div>
-                <h3 className="font-mono font-bold text-sm text-red-400 mb-3 tracking-wider flex items-center gap-1.5">
-                  <span className="text-red-500">&gt;</span> DATABASE & TOOLS
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {databasesToolsSkills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="text-xs font-medium text-slate-300 border border-white/5 bg-[#0a0a0c] px-3 py-1.5 rounded-lg hover:border-red-500/30 hover:bg-red-500/5 transition-all duration-300 shadow-sm cursor-default"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
+          <div className="flex flex-col gap-8 animate-fadeIn">
+            {/* Tech Orbit Interactive System */}
+            <div className="w-full flex justify-center py-2">
+              <TechOrbit />
             </div>
 
-            {/* Column 2 */}
-            <div className="space-y-6">
-              {/* Frameworks & Systems */}
-              <div>
-                <h3 className="font-mono font-bold text-sm text-red-400 mb-3 tracking-wider flex items-center gap-1.5">
-                  <span className="text-red-500">&gt;</span> FRAMEWORKS & SYSTEMS
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {frameworksSkills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="text-xs font-medium text-slate-300 border border-white/5 bg-[#0a0a0c] px-3 py-1.5 rounded-lg hover:border-red-500/30 hover:bg-red-500/5 transition-all duration-300 shadow-sm cursor-default"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+            {/* Grid of skill categories */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-white/5 pt-6 text-left">
+              {/* Column 1 */}
+              <div className="space-y-6">
+                {/* Programming & Web */}
+                <div>
+                  <h3 className="font-mono font-bold text-sm text-indigo-400 mb-3 tracking-wider flex items-center gap-1.5">
+                    <span className="text-indigo-500">&gt;</span> PROGRAMMING & WEB
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {programmingSkills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="text-xs font-medium text-slate-300 border border-white/5 bg-[#0a0a0c] px-3 py-1.5 rounded-lg hover:border-indigo-500/30 hover:bg-indigo-500/5 transition-all duration-300 shadow-sm cursor-default"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Databases & Tools */}
+                <div>
+                  <h3 className="font-mono font-bold text-sm text-indigo-400 mb-3 tracking-wider flex items-center gap-1.5">
+                    <span className="text-indigo-500">&gt;</span> DATABASE & TOOLS
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {databasesToolsSkills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="text-xs font-medium text-slate-300 border border-white/5 bg-[#0a0a0c] px-3 py-1.5 rounded-lg hover:border-indigo-500/30 hover:bg-indigo-500/5 transition-all duration-300 shadow-sm cursor-default"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
 
-              {/* AI/ML & Core Skills */}
-              <div>
-                <h3 className="font-mono font-bold text-sm text-red-400 mb-3 tracking-wider flex items-center gap-1.5">
-                  <span className="text-red-500">&gt;</span> AI/ML & CORE SKILLS
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {aiMlCoreSkills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="text-xs font-medium text-slate-300 border border-white/5 bg-[#0a0a0c] px-3 py-1.5 rounded-lg hover:border-red-500/30 hover:bg-red-500/5 transition-all duration-300 shadow-sm cursor-default"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+              {/* Column 2 */}
+              <div className="space-y-6">
+                {/* Frameworks & Systems */}
+                <div>
+                  <h3 className="font-mono font-bold text-sm text-indigo-400 mb-3 tracking-wider flex items-center gap-1.5">
+                    <span className="text-indigo-500">&gt;</span> FRAMEWORKS & SYSTEMS
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {frameworksSkills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="text-xs font-medium text-slate-300 border border-white/5 bg-[#0a0a0c] px-3 py-1.5 rounded-lg hover:border-indigo-500/30 hover:bg-indigo-500/5 transition-all duration-300 shadow-sm cursor-default"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* AI/ML & Core Skills */}
+                <div>
+                  <h3 className="font-mono font-bold text-sm text-indigo-400 mb-3 tracking-wider flex items-center gap-1.5">
+                    <span className="text-indigo-500">&gt;</span> AI/ML & CORE SKILLS
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {aiMlCoreSkills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="text-xs font-medium text-slate-300 border border-white/5 bg-[#0a0a0c] px-3 py-1.5 rounded-lg hover:border-indigo-500/30 hover:bg-indigo-500/5 transition-all duration-300 shadow-sm cursor-default"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

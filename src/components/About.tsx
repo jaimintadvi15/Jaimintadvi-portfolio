@@ -119,59 +119,67 @@ export default function About({ activeSection }: AboutProps) {
 
             {/* 1. SKILLS VIEW */}
             {activeTab === 'skills' && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left animate-fadeIn">
-
-                {/* Column 1: Programming & Web */}
-                <div className="space-y-4">
-                  <h3 className="font-mono font-bold text-xs text-red-400 mb-2 tracking-wider flex items-center gap-1.5">
-                    <span className="text-red-500">&gt;</span> PROGRAMMING & WEB
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {programmingSkills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="text-xs font-medium text-slate-300 border border-white/5 bg-[#0a0a0c] px-3 py-1.5 rounded-lg hover:border-red-500/30 hover:bg-red-500/5 transition-all duration-300 shadow-sm cursor-default"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
+              <div className="flex flex-col gap-8 animate-fadeIn">
+                {/* Tech Orbit Interactive System */}
+                <div className="w-full flex justify-center py-2">
+                  <TechOrbit />
                 </div>
 
-                {/* Column 2: Frameworks & Systems */}
-                <div className="space-y-4">
-                  <h3 className="font-mono font-bold text-xs text-red-400 mb-2 tracking-wider flex items-center gap-1.5">
-                    <span className="text-red-500">&gt;</span> FRAMEWORKS & SYSTEMS
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {frameworksSkills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="text-xs font-medium text-slate-300 border border-white/5 bg-[#0a0a0c] px-3 py-1.5 rounded-lg hover:border-red-500/30 hover:bg-red-500/5 transition-all duration-300 shadow-sm cursor-default"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                {/* Categorized Badges */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left border-t border-white/5 pt-6">
 
-                {/* Column 3: Databases & Tools */}
-                <div className="space-y-4">
-                  <h3 className="font-mono font-bold text-xs text-red-400 mb-2 tracking-wider flex items-center gap-1.5">
-                    <span className="text-red-500">&gt;</span> DATABASE & TOOLS
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {databasesToolsSkills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="text-xs font-medium text-slate-300 border border-white/5 bg-[#0a0a0c] px-3 py-1.5 rounded-lg hover:border-red-500/30 hover:bg-red-500/5 transition-all duration-300 shadow-sm cursor-default"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+                  {/* Column 1: Programming & Web */}
+                  <div className="space-y-3">
+                    <h3 className="font-mono font-bold text-xs text-indigo-400 tracking-wider flex items-center gap-1.5">
+                      <span className="text-indigo-500">&gt;</span> PROGRAMMING & LANGUAGES
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {programmingSkills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="text-xs font-medium text-slate-300 border border-white/5 bg-[#0a0a0c] px-3 py-1.5 rounded-lg hover:border-indigo-500/30 hover:bg-indigo-500/5 transition-all duration-300 shadow-sm cursor-default"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
 
+                  {/* Column 2: Frameworks & Systems */}
+                  <div className="space-y-3">
+                    <h3 className="font-mono font-bold text-xs text-indigo-400 tracking-wider flex items-center gap-1.5">
+                      <span className="text-indigo-500">&gt;</span> FRAMEWORKS & AI
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {frameworksSkills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="text-xs font-medium text-slate-300 border border-white/5 bg-[#0a0a0c] px-3 py-1.5 rounded-lg hover:border-indigo-500/30 hover:bg-indigo-500/5 transition-all duration-300 shadow-sm cursor-default"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Column 3: Databases & Tools */}
+                  <div className="space-y-3">
+                    <h3 className="font-mono font-bold text-xs text-indigo-400 tracking-wider flex items-center gap-1.5">
+                      <span className="text-indigo-500">&gt;</span> DATABASE & DEVOPS
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {databasesToolsSkills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="text-xs font-medium text-slate-300 border border-white/5 bg-[#0a0a0c] px-3 py-1.5 rounded-lg hover:border-indigo-500/30 hover:bg-indigo-500/5 transition-all duration-300 shadow-sm cursor-default"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                </div>
               </div>
             )}
 
