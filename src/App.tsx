@@ -1,16 +1,14 @@
 import { useState, useEffect } from 'react';
-import { MessageSquare } from 'lucide-react';
 import { motion, useScroll, useSpring } from 'motion/react';
 import AnimatedBackground from './components/AnimatedBackground';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Skills from './components/Skills';
-import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Achievements from './components/Achievements';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Chatbot from './components/Chatbot';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -73,13 +71,7 @@ export default function App() {
         <Hero />
 
         {/* About Me Section */}
-        <About />
-
-        {/* Technical Skills Section */}
-        <Skills />
-
-        {/* Club & Project Experience Timeline */}
-        <Experience />
+        <About activeSection={activeSection} />
 
         {/* Creative Projects Showcase */}
         <Projects />
@@ -94,21 +86,8 @@ export default function App() {
       {/* Footer Area */}
       <Footer />
 
-      {/* Floating Chat Widget */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <button 
-          className="relative p-4 rounded-2xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-indigo-600 hover:from-indigo-500 hover:via-purple-500 hover:to-indigo-500 text-white shadow-[0_8px_30px_rgba(124,58,237,0.4)] hover:shadow-[0_8px_35px_rgba(124,58,237,0.6)] transition-all duration-300 hover:scale-105 group border border-purple-500/20"
-          aria-label="Open chat"
-          onClick={() => {
-            document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-          }}
-        >
-          <MessageSquare className="h-6 w-6" />
-          <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-cyan-400 text-[10px] font-bold text-slate-950 border-2 border-slate-950 shadow-md">
-            1
-          </span>
-        </button>
-      </div>
+      {/* AI Chatbot for queries */}
+      <Chatbot />
     </div>
   );
 }

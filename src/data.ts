@@ -20,8 +20,6 @@ export const skillsData: SkillCategory[] = [
       { name: "C++", iconName: "Code2", color: "from-blue-500 to-indigo-600" },
       { name: "C", iconName: "Binary", color: "from-blue-400 to-blue-600" },
       { name: "Java", iconName: "Coffee", color: "from-red-500 to-orange-600" },
-      { name: "Python", iconName: "FileCode", color: "from-yellow-500 to-green-600" },
-      { name: "JavaScript", iconName: "FileJson", color: "from-yellow-400 to-amber-500" },
       { name: "HTML5", iconName: "Layout", color: "from-orange-500 to-red-500" },
       { name: "CSS3", iconName: "Palette", color: "from-blue-400 to-indigo-500" }
     ]
@@ -30,10 +28,7 @@ export const skillsData: SkillCategory[] = [
     title: "Frameworks & Libraries",
     skills: [
       { name: "React.js", iconName: "Atom", color: "from-cyan-400 to-blue-500" },
-      { name: "Node.js", iconName: "Server", color: "from-green-500 to-emerald-600" },
-      { name: "Express.js", iconName: "Cpu", color: "from-gray-400 to-gray-600" },
-      { name: "Tailwind CSS", iconName: "Layers", color: "from-teal-400 to-cyan-500" },
-      { name: "Bootstrap", iconName: "Grid", color: "from-purple-500 to-indigo-600" }
+      { name: "Node.js", iconName: "Server", color: "from-green-500 to-emerald-600" }
     ]
   },
   {
@@ -41,9 +36,7 @@ export const skillsData: SkillCategory[] = [
     skills: [
       { name: "Git", iconName: "GitBranch", color: "from-orange-600 to-red-600" },
       { name: "GitHub", iconName: "Github", color: "from-gray-700 to-gray-900" },
-      { name: "VS Code", iconName: "Terminal", color: "from-blue-500 to-sky-600" },
-      { name: "Postman", iconName: "Send", color: "from-orange-500 to-red-600" },
-      { name: "Figma", iconName: "PenTool", color: "from-pink-500 to-purple-600" }
+      { name: "VS Code", iconName: "Terminal", color: "from-blue-500 to-sky-600" }
     ]
   }
 ];

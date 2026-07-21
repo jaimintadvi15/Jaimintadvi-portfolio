@@ -36,11 +36,10 @@ export default function Navbar({ activeSection }: NavbarProps) {
     <header className="fixed top-0 left-0 right-0 z-50 flex justify-center p-4 transition-all duration-500">
       <nav
         id="navbar-pill"
-        className={`w-full flex items-center justify-between transition-all duration-500 rounded-full px-6 py-3 md:px-8 ${
-          isScrolled
+        className={`w-full flex items-center justify-between transition-all duration-500 rounded-full px-6 py-3 md:px-8 ${isScrolled
             ? 'max-w-2xl bg-slate-950/50 backdrop-blur-md border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.5)] py-2'
             : 'max-w-6xl bg-transparent border border-transparent py-4'
-        }`}
+          }`}
       >
         {/* Logo / Brand Name */}
         <a href="#home" className="flex items-center gap-2 group">
@@ -61,11 +60,13 @@ export default function Navbar({ activeSection }: NavbarProps) {
               <li key={item.label}>
                 <a
                   href={item.href}
-                  className={`relative text-xs font-medium tracking-wider uppercase px-4 py-2 transition-all duration-300 rounded-full hover:text-white ${
-                    isActive ? 'text-indigo-400' : 'text-slate-400'
-                  }`}
+                  className={`group relative text-xs font-medium tracking-wider uppercase px-4 py-2.5 flex flex-col items-center gap-1 transition-colors duration-500 ease-in-out hover:text-white ${isActive ? 'text-indigo-400' : 'text-slate-400'
+                    }`}
                 >
-                  {item.label}
+                  <span>{item.label}</span>
+                  {/* Smooth Gradient Underline that grows on hover */}
+                  <span className={`absolute bottom-0 h-[2px] bg-gradient-to-r from-blue-400 to-indigo-500 transition-all duration-500 ease-in-out ${isActive ? 'w-4' : 'w-0 group-hover:w-4'}`} />
+
                   {isActive && (
                     <motion.span
                       layoutId="activeNavIndicator"
@@ -112,11 +113,10 @@ export default function Navbar({ activeSection }: NavbarProps) {
                     <a
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className={`block px-4 py-3 rounded-xl text-sm font-medium tracking-wider uppercase transition-all ${
-                        isActive
+                      className={`block px-4 py-3 rounded-xl text-sm font-medium tracking-wider uppercase transition-all ${isActive
                           ? 'bg-indigo-600/20 text-indigo-400 border-l-4 border-indigo-500'
                           : 'text-slate-400 hover:text-white hover:bg-white/5'
-                      }`}
+                        }`}
                     >
                       {item.label}
                     </a>

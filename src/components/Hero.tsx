@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ArrowDown, ArrowRight, Github, Linkedin, Send, Activity, Compass, Sparkles } from 'lucide-react';
+import { ArrowDown, ArrowRight, Github, Linkedin, Send, Activity, Compass, Sparkles, Mail } from 'lucide-react';
 import { motion } from 'motion/react';
 import { personalInfo } from '../data';
 import Magnetic from './Magnetic';
@@ -73,7 +73,7 @@ export default function Hero() {
   return (
     <section 
       id="home" 
-      className="relative min-h-screen flex flex-col items-center justify-center px-4 pt-20"
+      className="relative min-h-screen flex flex-col items-center justify-center px-4 pt-28 md:pt-36 pb-12 scroll-mt-28"
     >
       {/* Decorative center grid light */}
       <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30vw] h-[30vw] bg-indigo-500/10 blur-[80px] rounded-full -z-10" />
@@ -155,16 +155,21 @@ export default function Hero() {
           <Magnetic>
             <a 
               href="#projects" 
-              className="group relative flex items-center gap-2 bg-gradient-to-r from-rose-500 via-orange-500 to-amber-500 hover:from-rose-400 hover:via-orange-400 hover:to-amber-400 text-white font-medium px-8 py-3.5 rounded-full shadow-[0_4px_20px_rgba(244,63,94,0.35)] hover:shadow-[0_4px_25px_rgba(244,63,94,0.55)] transition-all duration-300 transform hover:-translate-y-0.5 text-sm"
+              className="group relative flex items-center gap-2 text-white font-medium px-8 py-3.5 rounded-full shadow-[0_4px_15px_rgba(244,63,94,0.25)] hover:shadow-[0_8px_25px_rgba(244,63,94,0.45)] transition-all duration-500 ease-in-out hover:-translate-y-[2px] text-sm overflow-hidden"
             >
+              {/* Default background gradient (subtle version) */}
+              <span className="absolute inset-0 bg-gradient-to-r from-rose-500/90 via-orange-500/90 to-amber-500/90 opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out -z-10 rounded-full" />
+              {/* Hover background gradient (intensified version) */}
+              <span className="absolute inset-0 bg-gradient-to-r from-rose-400 via-orange-400 to-amber-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out -z-10 rounded-full" />
+              
               <span>View My Projects</span>
-              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300 ease-in-out" />
             </a>
           </Magnetic>
           <Magnetic>
             <a 
               href="#contact" 
-              className="flex items-center gap-2 bg-slate-950/60 hover:bg-slate-900/80 text-slate-300 hover:text-white border border-emerald-500/30 hover:border-emerald-500/60 font-medium px-8 py-3.5 rounded-full transition-all duration-300 transform hover:-translate-y-0.5 text-sm shadow-[0_4px_15px_rgba(0,0,0,0.3)]"
+              className="flex items-center gap-2 bg-slate-950/60 hover:bg-slate-900/80 text-slate-300 hover:text-white border border-emerald-500/30 hover:border-emerald-500/60 font-medium px-8 py-3.5 rounded-full transition-all duration-500 ease-in-out hover:-translate-y-[2px] text-sm shadow-[0_4px_15px_rgba(0,0,0,0.3)] hover:shadow-[0_0_20px_rgba(16,185,129,0.25)]"
             >
               <span>Contact Me</span>
               <Send className="h-4 w-4" />
@@ -182,7 +187,7 @@ export default function Hero() {
               href="https://github.com/jaimintadvi" 
               target="_blank" 
               referrerPolicy="no-referrer"
-              className="p-3 bg-white/5 border border-white/5 hover:border-white/20 hover:bg-white/10 text-slate-400 hover:text-indigo-400 rounded-full transition-all duration-300 hover:scale-110 shadow-lg block"
+              className="p-3 bg-white/5 border border-white/5 hover:border-purple-500/30 text-slate-400 hover:text-cyan-400 rounded-full transition-all duration-500 ease-in-out hover:-translate-y-[3px] hover:shadow-[0_0_15px_rgba(168,85,247,0.25)] shadow-lg block"
             >
               <Github className="h-5 w-5" />
             </a>
@@ -192,9 +197,17 @@ export default function Hero() {
               href="https://linkedin.com/in/jaimintadvi" 
               target="_blank" 
               referrerPolicy="no-referrer"
-              className="p-3 bg-white/5 border border-white/5 hover:border-white/20 hover:bg-white/10 text-slate-400 hover:text-indigo-400 rounded-full transition-all duration-300 hover:scale-110 shadow-lg block"
+              className="p-3 bg-white/5 border border-white/5 hover:border-purple-500/30 text-slate-400 hover:text-cyan-400 rounded-full transition-all duration-500 ease-in-out hover:-translate-y-[3px] hover:shadow-[0_0_15px_rgba(168,85,247,0.25)] shadow-lg block"
             >
               <Linkedin className="h-5 w-5" />
+            </a>
+          </Magnetic>
+          <Magnetic strength={0.4}>
+            <a 
+              href="mailto:jaimintadvi15@gmail.com" 
+              className="p-3 bg-white/5 border border-white/5 hover:border-purple-500/30 text-slate-400 hover:text-cyan-400 rounded-full transition-all duration-500 ease-in-out hover:-translate-y-[3px] hover:shadow-[0_0_15px_rgba(168,85,247,0.25)] shadow-lg block"
+            >
+              <Mail className="h-5 w-5" />
             </a>
           </Magnetic>
         </motion.div>

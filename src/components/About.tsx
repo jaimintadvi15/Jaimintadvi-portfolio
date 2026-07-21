@@ -1,125 +1,273 @@
-import { MapPin, GraduationCap, School, BookOpen } from 'lucide-react';
-import { motion } from 'motion/react';
-import { personalInfo } from '../data';
-import TiltSpotlightCard from './TiltSpotlightCard';
+import React, { useState, useEffect } from 'react';
+import { Calendar, ChevronRight, Code2, Briefcase, GraduationCap } from 'lucide-react';
+import { personalInfo, experienceData } from '../data';
+import MSULogo from './MSULogo';
 
-export default function About() {
-  const facts = [
-    { icon: MapPin, label: "Location", value: personalInfo.location, color: "text-rose-400 bg-rose-500/10 border-rose-500/20" },
-    { icon: GraduationCap, label: "Degree", value: personalInfo.degree, color: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20" },
-    { icon: School, label: "University", value: personalInfo.university, color: "text-blue-400 bg-blue-500/10 border-blue-500/20" },
-    { icon: BookOpen, label: "Currently Learning", value: personalInfo.currentlyLearning, color: "text-amber-400 bg-amber-500/10 border-amber-500/20" },
-  ];
+const programmingSkills = ["C++", "C", "Java", "HTML5", "CSS3"];
+const frameworksSkills = ["React.js", "Node.js"];
+const databasesToolsSkills = ["Git", "GitHub", "VS Code"];
+
+interface AboutProps {
+  activeSection: string;
+}
+
+export default function About({ activeSection }: AboutProps) {
+  const [activeTab, setActiveTab] = useState<'skills' | 'experience' | 'education'>('skills');
+
+  // Sync active section from scroll spy to tab selection
+  useEffect(() => {
+    if (activeSection === 'skills' || activeSection === 'experience' || activeSection === 'education') {
+      setActiveTab(activeSection as any);
+    }
+  }, [activeSection]);
 
   return (
-    <section id="about" className="py-24 px-4 max-w-6xl mx-auto scroll-mt-20">
-      {/* Section Header */}
-      <div className="text-center mb-16">
-        <h2 className="font-display font-bold text-3xl md:text-5xl text-white tracking-tight mb-4">
+    <section className="py-12 px-4 max-w-6xl mx-auto scroll-mt-16 relative">
+      {/* Absolute scroll spy target elements for Navbar */}
+      <div id="about" className="absolute top-0 left-0 scroll-mt-20" />
+      <div id="skills" className="absolute top-0 left-0 scroll-mt-20" />
+      <div id="experience" className="absolute top-0 left-0 scroll-mt-20" />
+      <div id="education" className="absolute top-0 left-0 scroll-mt-20" />
+
+      {/* 1. About Me Biography (above the grid, spanning full width) */}
+      <div className="mb-10 text-left max-w-4xl">
+        <h2 className="font-display font-extrabold text-2xl md:text-3xl text-white tracking-tight mb-3 select-none">
           About{" "}
           <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
             Me
           </span>
         </h2>
-        <div className="h-1 w-20 bg-indigo-500 mx-auto rounded-full" />
+        <p className="text-slate-400 text-xs md:text-sm leading-relaxed">
+          {personalInfo.bio}
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-        {/* Left Side: Biography Card */}
-        <TiltSpotlightCard
-          delay={0}
-          className="lg:col-span-7 glass-card rounded-3xl p-8 md:p-10 flex flex-col justify-between"
-        >
-          <div>
-            <span className="font-mono text-xs text-indigo-400 tracking-wider uppercase mb-3 block">Who I Am</span>
-            <h3 className="font-display font-semibold text-2xl text-white mb-6">
-              I am a 2nd year student at MSU Baroda driven by engineering beautiful digital spaces.
-            </h3>
-            <p className="text-slate-400 leading-relaxed mb-6">
-              {personalInfo.bio}
-            </p>
-            <p className="text-slate-400 leading-relaxed">
-              When I'm not studying core academic subjects, I am deep into coding libraries, playing with animation frameworks, and writing clean backend APIs. I believe in writing code that is not just functional, but an absolute joy to interact with.
-            </p>
-          </div>
+      {/* 2. Side-by-Side: Photo & Skills Switcher Container */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
-          <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between flex-wrap gap-4">
-            <div>
-              <p className="font-mono text-xs text-slate-500">Degree Focus</p>
-              <p className="text-slate-300 font-medium text-sm">Computer Science & Engineering</p>
-            </div>
-            <div>
-              <p className="font-mono text-xs text-slate-500">Club Affiliation</p>
-              <p className="text-indigo-400 font-medium text-sm">Code Vimarsh Club Web Team</p>
-            </div>
-          </div>
-        </TiltSpotlightCard>
+        {/* Left Column: Photo / Logo Card (lg:col-span-4) */}
+        <div className="lg:col-span-4 flex flex-col justify-center">
+          <div className="glass-card rounded-3xl p-6 border border-white/5 bg-slate-950/40 backdrop-blur-xl flex flex-col items-center justify-center relative overflow-hidden min-h-[260px]">
+            {/* Neon Orb background glowing */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-red-500/10 rounded-full blur-[40px] -z-10" />
 
-        {/* Right Side: Visual Avatar Platform */}
-        <TiltSpotlightCard
-          delay={0.1}
-          className="lg:col-span-5 glass-card rounded-3xl p-8 flex flex-col items-center justify-center relative overflow-hidden"
-        >
-          {/* Neon Orb background glowing */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-indigo-500/20 rounded-full blur-[40px] -z-10" />
-
-          {/* Interactive Abstract 3D Avatar Frame */}
-          <div className="relative h-60 w-60 flex items-center justify-center rounded-2xl bg-slate-900/40 border border-white/10 overflow-hidden group shadow-2xl">
-            {/* Pulsing rings */}
-            <div className="absolute inset-0 border border-indigo-500/20 rounded-2xl animate-pulse scale-90" />
-            <div className="absolute inset-2 border border-purple-500/10 rounded-2xl animate-pulse delay-500 scale-95" />
-
-            {/* Futuristic Tech HUD / Silhouette */}
-            <div className="relative z-10 text-center p-4">
-              <div className="text-7xl font-display font-extrabold bg-gradient-to-br from-indigo-300 via-purple-300 to-cyan-300 bg-clip-text text-transparent select-none">
-                JT
-              </div>
-              <div className="mt-4 font-mono text-[10px] text-slate-500 tracking-widest uppercase">
-                &lt; Developer_ID &gt;
-              </div>
-              <div className="mt-1.5 font-mono text-xs text-indigo-400 font-semibold">
-                Baroda_BE2_CS
-              </div>
+            {/* Jaimin's Profile Photo */}
+            <div className="w-40 h-52 rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-slate-900 flex items-center justify-center relative group">
+              <img
+                src="/WhatsApp%20Image%202026-07-19%20at%206.24.16%20PM.jpeg"
+                alt="Jaimin Tadvi"
+                className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+              />
             </div>
 
-            {/* Corner decorative anchors */}
-            <div className="absolute top-2 left-2 w-2 h-2 border-t border-l border-indigo-500/60" />
-            <div className="absolute top-2 right-2 w-2 h-2 border-t border-r border-indigo-500/60" />
-            <div className="absolute bottom-2 left-2 w-2 h-2 border-b border-l border-indigo-500/60" />
-            <div className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-indigo-500/60" />
-            
-            {/* Scanning line animation */}
-            <div className="absolute top-0 left-0 right-0 h-1 bg-indigo-500/30 blur-sm shadow-[0_0_10px_rgba(99,102,241,0.5)] animate-bounce" />
+            <div className="mt-5 text-center">
+              <h4 className="font-display font-bold text-sm text-white">{personalInfo.name}</h4>
+              <p className="text-slate-400 text-[10px] mt-1">{personalInfo.university}</p>
+            </div>
           </div>
+        </div>
 
-          <div className="mt-8 text-center">
-            <h4 className="font-display font-bold text-lg text-white">{personalInfo.name}</h4>
-            <p className="text-slate-400 text-xs mt-1">{personalInfo.university}</p>
-          </div>
-        </TiltSpotlightCard>
-      </div>
-
-      {/* Facts Strip / Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
-        {facts.map((fact, index) => {
-          const IconComponent = fact.icon;
-          return (
-            <TiltSpotlightCard
-              key={fact.label}
-              delay={index * 0.05}
-              yOffset={20}
-              className="glass-card rounded-2xl p-5 flex flex-row items-start gap-4 hover:border-indigo-500/30 cursor-pointer"
+        {/* Right Column: Dynamic Switcher Container (lg:col-span-8) */}
+        <div className="lg:col-span-8 flex flex-col">
+          {/* Tab Switcher Controls */}
+          <div className="flex items-center gap-1 bg-[#0a0a0c] border border-white/5 rounded-2xl p-1.5 w-fit mb-6 shadow-inner">
+            {/* SKILLS TAB */}
+            <button
+              onClick={() => setActiveTab('skills')}
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer ${activeTab === 'skills'
+                  ? 'bg-red-500/10 border border-red-500/30 text-red-400 shadow-[0_0_15px_rgba(239,68,68,0.07)]'
+                  : 'border border-transparent text-slate-400 hover:text-white hover:bg-white/5'
+                }`}
             >
-              <div className={`p-3 rounded-xl border flex-shrink-0 ${fact.color}`}>
-                <IconComponent className="h-5 w-5" />
+              {activeTab === 'skills' && <span className="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse" />}
+              <Code2 className="h-4 w-4" />
+              <span>Skills</span>
+            </button>
+
+            {/* EXPERIENCE TAB */}
+            <button
+              onClick={() => setActiveTab('experience')}
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer ${activeTab === 'experience'
+                  ? 'bg-red-500/10 border border-red-500/30 text-red-400 shadow-[0_0_15px_rgba(239,68,68,0.07)]'
+                  : 'border border-transparent text-slate-400 hover:text-white hover:bg-white/5'
+                }`}
+            >
+              {activeTab === 'experience' && <span className="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse" />}
+              <Briefcase className="h-4 w-4" />
+              <span>Experience</span>
+            </button>
+
+            {/* EDUCATION TAB */}
+            <button
+              onClick={() => setActiveTab('education')}
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer ${activeTab === 'education'
+                  ? 'bg-red-500/10 border border-red-500/30 text-red-400 shadow-[0_0_15px_rgba(239,68,68,0.07)]'
+                  : 'border border-transparent text-slate-400 hover:text-white hover:bg-white/5'
+                }`}
+            >
+              {activeTab === 'education' && <span className="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse" />}
+              <GraduationCap className="h-4 w-4" />
+              <span>Education</span>
+            </button>
+          </div>
+
+          {/* Switcher Content Card */}
+          <div className="glass-card rounded-3xl p-6 border border-white/5 bg-slate-950/40 backdrop-blur-xl relative overflow-hidden flex-1 flex flex-col justify-center min-h-[340px]">
+            {/* Subtle decorative glow */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-red-500/5 rounded-full blur-[80px] pointer-events-none -z-10 animate-pulse" />
+
+            {/* 1. SKILLS VIEW */}
+            {activeTab === 'skills' && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-left animate-fadeIn">
+
+                {/* Column 1: Programming & Web */}
+                <div className="space-y-4">
+                  <h3 className="font-mono font-bold text-xs text-red-400 mb-2 tracking-wider flex items-center gap-1.5">
+                    <span className="text-red-500">&gt;</span> PROGRAMMING & WEB
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {programmingSkills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="text-xs font-medium text-slate-300 border border-white/5 bg-[#0a0a0c] px-3 py-1.5 rounded-lg hover:border-red-500/30 hover:bg-red-500/5 transition-all duration-300 shadow-sm cursor-default"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Column 2: Frameworks & Systems */}
+                <div className="space-y-4">
+                  <h3 className="font-mono font-bold text-xs text-red-400 mb-2 tracking-wider flex items-center gap-1.5">
+                    <span className="text-red-500">&gt;</span> FRAMEWORKS & SYSTEMS
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {frameworksSkills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="text-xs font-medium text-slate-300 border border-white/5 bg-[#0a0a0c] px-3 py-1.5 rounded-lg hover:border-red-500/30 hover:bg-red-500/5 transition-all duration-300 shadow-sm cursor-default"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Column 3: Databases & Tools */}
+                <div className="space-y-4">
+                  <h3 className="font-mono font-bold text-xs text-red-400 mb-2 tracking-wider flex items-center gap-1.5">
+                    <span className="text-red-500">&gt;</span> DATABASE & TOOLS
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {databasesToolsSkills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="text-xs font-medium text-slate-300 border border-white/5 bg-[#0a0a0c] px-3 py-1.5 rounded-lg hover:border-red-500/30 hover:bg-red-500/5 transition-all duration-300 shadow-sm cursor-default"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
               </div>
-              <div>
-                <p className="font-mono text-[10px] text-slate-500 tracking-wider uppercase">{fact.label}</p>
-                <p className="text-slate-300 font-medium text-xs mt-1 leading-relaxed">{fact.value}</p>
+            )}
+
+            {/* 2. EXPERIENCE VIEW */}
+            {activeTab === 'experience' && (
+              <div className="space-y-6 text-left animate-fadeIn">
+                {experienceData.map((exp) => (
+                  <div
+                    key={`${exp.company}-${exp.role}`}
+                    className="relative overflow-hidden group rounded-2xl"
+                  >
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                      <div>
+                        <span className="font-mono text-[10px] text-red-400 tracking-wider uppercase mb-0.5 block font-semibold">
+                          {exp.company}
+                        </span>
+                        <h3 className="font-display font-bold text-xl text-white">
+                          {exp.role}
+                        </h3>
+                      </div>
+
+                      {/* Duration Badge */}
+                      <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-slate-300 font-mono self-start sm:self-center">
+                        <Calendar className="h-3.5 w-3.5 text-red-400" />
+                        <span>{exp.duration}</span>
+                      </div>
+                    </div>
+
+                    {/* Descriptions */}
+                    <ul className="space-y-2 mb-5 text-slate-400 text-xs md:text-sm leading-relaxed">
+                      {exp.description.map((bullet, bulletIdx) => (
+                        <li key={bulletIdx} className="flex items-start gap-2">
+                          <ChevronRight className="h-4.5 w-4.5 text-red-500 flex-shrink-0 mt-0.5" />
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {/* Tags */}
+                    <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
+                      {exp.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-[10px] font-mono tracking-wider font-semibold px-2.5 py-1 rounded bg-red-500/10 border border-red-500/20 text-red-300 uppercase shadow-sm"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
-            </TiltSpotlightCard>
-          );
-        })}
+            )}
+
+            {/* 3. EDUCATION VIEW */}
+            {activeTab === 'education' && (
+              <div className="space-y-6 text-left animate-fadeIn">
+                <div className="relative overflow-hidden group rounded-2xl">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                    <div>
+                      <span className="font-mono text-[10px] text-red-400 tracking-wider uppercase mb-0.5 block font-semibold">
+                        The Maharaja Sayajirao University of Baroda
+                      </span>
+                      <h3 className="font-display font-bold text-xl text-white">
+                        Bachelor of Engineering in Computer Science & Engineering
+                      </h3>
+                    </div>
+
+                    {/* Duration Badge */}
+                    <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-slate-300 font-mono self-start sm:self-center">
+                      <Calendar className="h-3.5 w-3.5 text-red-400" />
+                      <span>2022 — 2026</span>
+                    </div>
+                  </div>
+
+                  {/* Descriptions */}
+                  <p className="text-slate-400 text-xs md:text-sm leading-relaxed mb-5">
+                    Currently pursuing a B.E. in Computer Science & Engineering at MSU Baroda, Vadodara, Gujarat. Focuses on core software engineering methodologies, design patterns, database architectures, algorithms, and artificial intelligence.
+                  </p>
+
+                  {/* Coursework Tags */}
+                  <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
+                    {["Data Structures", "Algorithms", "Database Management Systems", "Object Oriented Programming", "Operating Systems", "Computer Networks"].map((course) => (
+                      <span
+                        key={course}
+                        className="text-[10px] font-mono tracking-wider font-semibold px-2.5 py-1 rounded bg-red-500/10 border border-red-500/20 text-red-300 uppercase shadow-sm"
+                      >
+                        {course}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
       </div>
     </section>
   );

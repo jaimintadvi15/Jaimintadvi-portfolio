@@ -1,4 +1,4 @@
-import { useState, ReactNode } from 'react';
+import React, { useState, ReactNode } from 'react';
 import { motion } from 'motion/react';
 
 interface TiltSpotlightCardProps {
@@ -6,9 +6,10 @@ interface TiltSpotlightCardProps {
   className?: string;
   delay?: number;
   yOffset?: number;
+  key?: React.Key;
 }
 
-export default function TiltSpotlightCard({ children, className = "", delay = 0, yOffset = 30 }: TiltSpotlightCardProps) {
+export default function TiltSpotlightCard({ children, className = "", delay = 0, yOffset = 30 }: TiltSpotlightCardProps): React.JSX.Element {
   const [tilt, setTilt] = useState({ rotateX: 0, rotateY: 0 });
   const [spotlight, setSpotlight] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);

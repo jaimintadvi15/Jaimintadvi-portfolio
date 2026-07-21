@@ -262,6 +262,21 @@ export default function Contact() {
                   </div>
                 </a>
 
+                <a 
+                  href="https://github.com/jaimintadvi"
+                  target="_blank"
+                  referrerPolicy="no-referrer"
+                  className="flex items-center gap-4 p-3 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-indigo-500/30 hover:bg-slate-900/30 transition-all group"
+                >
+                  <div className="p-3 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 group-hover:bg-indigo-600/20 transition-all">
+                    <Github className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <span className="font-mono text-[10px] text-slate-500 block uppercase">GitHub Profile</span>
+                    <span className="text-slate-200 text-xs md:text-sm font-medium">github.com/jaimintadvi</span>
+                  </div>
+                </a>
+
                 <div className="flex items-center gap-4 p-3 rounded-2xl bg-white/[0.02] border border-white/5">
                   <div className="p-3 rounded-xl bg-rose-500/10 border border-rose-500/20 text-rose-400">
                     <MapPin className="h-5 w-5" />
