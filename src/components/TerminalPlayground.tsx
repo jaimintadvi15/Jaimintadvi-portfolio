@@ -123,7 +123,7 @@ export default function TerminalPlayground() {
 
       default:
         output = (
-          <p className="text-xs font-mono text-rose-400">
+          <p className="text-xs font-mono text-amber-400">
             Command not recognized: &apos;{trimmed}&apos;. Type <span className="text-white font-bold">&apos;help&apos;</span> for a list of available commands.
           </p>
         );

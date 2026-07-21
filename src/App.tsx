@@ -5,7 +5,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import SkillOrbitSection from './components/SkillOrbitSection';
-import WhyChooseMe from './components/WhyChooseMe';
 import Projects from './components/Projects';
 import Achievements from './components/Achievements';
 import Contact from './components/Contact';
@@ -27,7 +26,6 @@ export default function App() {
       'about',
       'skills',
       'skill-orbit',
-      'why-me',
       'projects',
       'achievements',
       'contact'
@@ -66,7 +64,7 @@ export default function App() {
     <div id="app-container" className="relative min-h-screen text-slate-100 font-sans selection:bg-indigo-500/30 selection:text-white">
       {/* Scroll Progress Bar */}
       <motion.div 
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 via-teal-300 via-indigo-400 to-purple-500 origin-left z-50 shadow-[0_0_15px_rgba(6,182,212,0.6)]"
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 via-green-400 via-emerald-400 to-teal-400 origin-left z-50 shadow-[0_0_15px_rgba(34,197,94,0.6)]"
         style={{ scaleX }}
       />
 
@@ -87,10 +85,7 @@ export default function App() {
         {/* 3. Dedicated Interactive Skill/Website Orbit System */}
         <SkillOrbitSection />
 
-        {/* 5. Why Choose Jaimin? (Pillars of Value) */}
-        <WhyChooseMe />
-
-        {/* 6. Creative Projects Showcase */}
+        {/* 4. Creative Projects Showcase */}
         <Projects />
 
         {/* 7. Latest Achievements & Certificates Grid */}

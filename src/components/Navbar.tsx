@@ -26,7 +26,6 @@ export default function Navbar({ activeSection }: NavbarProps) {
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
     { label: 'Web Orbit', href: '#skill-orbit' },
-    { label: 'Why Me', href: '#why-me' },
     { label: 'Projects', href: '#projects' },
     { label: 'Certificates', href: '#achievements' },
     { label: 'Contact', href: '#contact' },
@@ -44,11 +43,11 @@ export default function Navbar({ activeSection }: NavbarProps) {
       >
         {/* Logo / Brand Name */}
         <a href="#home" className="flex items-center gap-2 group flex-shrink-0">
-          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-cyan-500/10 border border-cyan-500/30 group-hover:bg-cyan-500/20 group-hover:border-cyan-400 transition-all duration-300 shadow-[0_0_15px_rgba(6,182,212,0.2)]">
-            <span className="font-mono text-xs font-bold text-cyan-400">&gt;_</span>
+          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#22c55e]/10 border border-[#22c55e]/30 group-hover:bg-[#22c55e]/20 group-hover:border-[#22c55e] transition-all duration-300 shadow-[0_0_15px_rgba(34,197,94,0.2)]">
+            <span className="font-mono text-xs font-bold text-[#22c55e]">&gt;_</span>
           </div>
           <span className="font-display font-bold text-base tracking-tight text-white transition-all whitespace-nowrap">
-            Jaimin<span className="text-cyan-400 font-bold">.T</span>
+            Jaimin<span className="text-[#22c55e] font-bold">.T</span>
           </span>
         </a>
 
@@ -60,18 +59,18 @@ export default function Navbar({ activeSection }: NavbarProps) {
               <li key={item.label} className="flex-shrink-0">
                 <a
                   href={item.href}
-                  className={`group relative text-[11px] font-medium tracking-wider uppercase px-3 py-2 flex items-center justify-center whitespace-nowrap transition-colors duration-300 ease-in-out hover:text-white ${
-                    isActive ? 'text-cyan-400 font-bold' : 'text-slate-400'
+                  className={`group relative text-[11px] font-mono font-medium tracking-wider uppercase px-3 py-2 flex items-center justify-center whitespace-nowrap transition-colors duration-300 ease-in-out hover:text-white ${
+                    isActive ? 'text-[#22c55e] font-bold' : 'text-slate-400'
                   }`}
                 >
                   <span className="whitespace-nowrap">{item.label}</span>
-                  {/* Smooth Cyan-Purple Gradient Underline */}
-                  <span className={`absolute bottom-0 h-[2px] bg-gradient-to-r from-cyan-400 to-purple-500 transition-all duration-300 ease-in-out ${isActive ? 'w-5' : 'w-0 group-hover:w-5'}`} />
+                  {/* Smooth Cyber Green Gradient Underline */}
+                  <span className={`absolute bottom-0 h-[2px] bg-gradient-to-r from-[#22c55e] to-teal-400 transition-all duration-300 ease-in-out ${isActive ? 'w-5' : 'w-0 group-hover:w-5'}`} />
 
                   {isActive && (
                     <motion.span
                       layoutId="activeNavIndicator"
-                      className="absolute inset-0 bg-cyan-500/10 border border-cyan-500/20 rounded-full -z-10"
+                      className="absolute inset-0 bg-[#22c55e]/10 border border-[#22c55e]/30 rounded-full -z-10"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}

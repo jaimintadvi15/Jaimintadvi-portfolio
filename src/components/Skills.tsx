@@ -1,46 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import { Calendar, ChevronRight, Code2, Briefcase, GraduationCap } from 'lucide-react';
-import { experienceData } from '../data';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Code2, Briefcase, GraduationCap, Calendar, ChevronRight } from 'lucide-react';
+import { skillCategories, experienceData } from '../data';
 import TechOrbit from './TechOrbit';
 
-const programmingSkills = ["Python", "JavaScript", "Java", "C++", "C", "HTML5", "CSS3"];
-const frameworksSkills = ["React 19", "Next.js", "Vite", "Tailwind CSS v4", "Framer Motion", "Node.js", "Express.js", "FastAPI", "Flask"];
-const databasesToolsSkills = ["Supabase", "PostgreSQL", "MongoDB", "SQLite", "Git", "GitHub", "Docker", "Vercel", "VS Code"];
-const aiMlCoreSkills = ["LangGraph (Agents)", "YOLOv11 (Vision)", "ChromaDB (RAG)", "Generative AI", "Local LLMs", "XGBoost", "Scikit-learn", "TensorFlow", "DSA", "OOP"];
-
-interface SkillsProps {
-  activeSection: string;
-}
-
-export default function Skills({ activeSection }: SkillsProps) {
+export default function Skills() {
   const [activeTab, setActiveTab] = useState<'skills' | 'experience' | 'education'>('skills');
-
-  // Sync active section from page scroll to the container tab
-  useEffect(() => {
-    if (activeSection === 'skills' || activeSection === 'experience' || activeSection === 'education') {
-      setActiveTab(activeSection as any);
-    }
-  }, [activeSection]);
+  const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(0);
 
   return (
-    <section className="py-12 px-4 max-w-6xl mx-auto scroll-mt-20 relative">
-      {/* Scroll targets for Navbar spy */}
-      <div id="skills" className="absolute top-0 left-0 scroll-mt-20" />
-      <div id="experience" className="absolute top-0 left-0 scroll-mt-20" />
-      <div id="education" className="absolute top-0 left-0 scroll-mt-20" />
-      
-      {/* Tab Switcher Controls (Just like the image!) */}
-      <div className="flex items-center gap-1 bg-[#0a0a0c] border border-white/5 rounded-2xl p-1.5 w-fit mb-8 shadow-inner">
+    <section id="skills" className="py-24 px-4 max-w-6xl mx-auto scroll-mt-20">
+      {/* Section Header */}
+      <div className="text-center mb-12">
+        <h2 className="font-display font-bold text-3xl md:text-5xl text-white tracking-tight mb-4">
+          Journey &amp;{" "}
+          <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-green-400 bg-clip-text text-transparent">
+            Experience
+          </span>
+        </h2>
+        <div className="h-1 w-20 bg-emerald-500 mx-auto rounded-full shadow-[0_0_15px_rgba(34,197,94,0.4)]" />
+      </div>
+
+      {/* Primary View Switcher Buttons (Skills vs Experience vs Education) */}
+      <div className="flex justify-center items-center gap-2 mb-10 bg-slate-900/60 p-1.5 rounded-2xl border border-white/10 w-fit mx-auto backdrop-blur-md shadow-xl">
         {/* SKILLS TAB */}
         <button
           onClick={() => setActiveTab('skills')}
           className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer ${
             activeTab === 'skills'
-              ? 'bg-red-500/10 border border-red-500/30 text-red-400 shadow-[0_0_15px_rgba(239,68,68,0.07)]'
+              ? 'bg-[#22c55e]/10 border border-[#22c55e]/30 text-[#22c55e] shadow-[0_0_15px_rgba(34,197,94,0.15)]'
               : 'border border-transparent text-slate-400 hover:text-white hover:bg-white/5'
           }`}
         >
-          {activeTab === 'skills' && <span className="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse" />}
+          {activeTab === 'skills' && <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />}
           <Code2 className="h-4 w-4" />
           <span>Skills</span>
         </button>
@@ -50,11 +42,11 @@ export default function Skills({ activeSection }: SkillsProps) {
           onClick={() => setActiveTab('experience')}
           className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer ${
             activeTab === 'experience'
-              ? 'bg-red-500/10 border border-red-500/30 text-red-400 shadow-[0_0_15px_rgba(239,68,68,0.07)]'
+              ? 'bg-[#22c55e]/10 border border-[#22c55e]/30 text-[#22c55e] shadow-[0_0_15px_rgba(34,197,94,0.15)]'
               : 'border border-transparent text-slate-400 hover:text-white hover:bg-white/5'
           }`}
         >
-          {activeTab === 'experience' && <span className="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse" />}
+          {activeTab === 'experience' && <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />}
           <Briefcase className="h-4 w-4" />
           <span>Experience</span>
         </button>
@@ -64,11 +56,11 @@ export default function Skills({ activeSection }: SkillsProps) {
           onClick={() => setActiveTab('education')}
           className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer ${
             activeTab === 'education'
-              ? 'bg-red-500/10 border border-red-500/30 text-red-400 shadow-[0_0_15px_rgba(239,68,68,0.07)]'
+              ? 'bg-[#22c55e]/10 border border-[#22c55e]/30 text-[#22c55e] shadow-[0_0_15px_rgba(34,197,94,0.15)]'
               : 'border border-transparent text-slate-400 hover:text-white hover:bg-white/5'
           }`}
         >
-          {activeTab === 'education' && <span className="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse" />}
+          {activeTab === 'education' && <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />}
           <GraduationCap className="h-4 w-4" />
           <span>Education</span>
         </button>
@@ -77,106 +69,75 @@ export default function Skills({ activeSection }: SkillsProps) {
       {/* Main Tabbed Container Panel */}
       <div className="glass-card rounded-3xl p-6 md:p-8 border border-white/5 bg-slate-950/40 backdrop-blur-xl relative overflow-hidden min-h-[380px] flex flex-col justify-center">
         {/* Subtle decorative glow */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-red-500/5 rounded-full blur-[80px] pointer-events-none -z-10 animate-pulse" />
+        <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-[80px] pointer-events-none -z-10 animate-pulse" />
 
         {/* 1. SKILLS VIEW */}
         {activeTab === 'skills' && (
           <div className="flex flex-col gap-8 animate-fadeIn">
             {/* Tech Orbit Interactive System */}
-            <div className="w-full flex justify-center py-2">
+            <div className="w-full flex flex-col items-center justify-center">
               <TechOrbit />
             </div>
 
-            {/* Grid of skill categories */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-white/5 pt-6 text-left">
-              {/* Column 1 */}
-              <div className="space-y-6">
-                {/* Programming & Web */}
-                <div>
-                  <h3 className="font-mono font-bold text-sm text-indigo-400 mb-3 tracking-wider flex items-center gap-1.5">
-                    <span className="text-indigo-500">&gt;</span> PROGRAMMING & WEB
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {programmingSkills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="text-xs font-medium text-slate-300 border border-white/5 bg-[#0a0a0c] px-3 py-1.5 rounded-lg hover:border-indigo-500/30 hover:bg-indigo-500/5 transition-all duration-300 shadow-sm cursor-default"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+            {/* Sub-Category Selector Pills */}
+            <div className="flex flex-wrap justify-center gap-2 border-t border-white/5 pt-6">
+              {skillCategories.map((cat, idx) => (
+                <button
+                  key={cat.title}
+                  onClick={() => setSelectedCategoryIndex(idx)}
+                  className={`px-4 py-2 rounded-xl text-xs font-mono transition-all cursor-pointer ${
+                    selectedCategoryIndex === idx
+                      ? 'bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-bold shadow-md'
+                      : 'bg-white/5 border border-white/5 text-slate-400 hover:text-slate-200'
+                  }`}
+                >
+                  {cat.title}
+                </button>
+              ))}
+            </div>
 
-                {/* Databases & Tools */}
-                <div>
-                  <h3 className="font-mono font-bold text-sm text-indigo-400 mb-3 tracking-wider flex items-center gap-1.5">
-                    <span className="text-indigo-500">&gt;</span> DATABASE & TOOLS
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {databasesToolsSkills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="text-xs font-medium text-slate-300 border border-white/5 bg-[#0a0a0c] px-3 py-1.5 rounded-lg hover:border-indigo-500/30 hover:bg-indigo-500/5 transition-all duration-300 shadow-sm cursor-default"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Column 2 */}
-              <div className="space-y-6">
-                {/* Frameworks & Systems */}
-                <div>
-                  <h3 className="font-mono font-bold text-sm text-indigo-400 mb-3 tracking-wider flex items-center gap-1.5">
-                    <span className="text-indigo-500">&gt;</span> FRAMEWORKS & SYSTEMS
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {frameworksSkills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="text-xs font-medium text-slate-300 border border-white/5 bg-[#0a0a0c] px-3 py-1.5 rounded-lg hover:border-indigo-500/30 hover:bg-indigo-500/5 transition-all duration-300 shadow-sm cursor-default"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* AI/ML & Core Skills */}
-                <div>
-                  <h3 className="font-mono font-bold text-sm text-indigo-400 mb-3 tracking-wider flex items-center gap-1.5">
-                    <span className="text-indigo-500">&gt;</span> AI/ML & CORE SKILLS
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {aiMlCoreSkills.map((skill) => (
-                      <span
-                        key={skill}
-                        className="text-xs font-medium text-slate-300 border border-white/5 bg-[#0a0a0c] px-3 py-1.5 rounded-lg hover:border-indigo-500/30 hover:bg-indigo-500/5 transition-all duration-300 shadow-sm cursor-default"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
+            {/* Selected Category Skill Badges Grid */}
+            <div className="w-full">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={selectedCategoryIndex}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2 }}
+                  className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3"
+                >
+                  {skillCategories[selectedCategoryIndex].skills.map((skill) => (
+                    <div
+                      key={skill.name}
+                      className="glass-card rounded-xl p-3 border border-white/5 bg-slate-900/40 hover:border-emerald-500/30 transition-all flex items-center gap-2.5 group"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 font-mono text-xs group-hover:scale-110 transition-transform">
+                        {skill.name.substring(0, 2)}
+                      </div>
+                      <div className="flex flex-col text-left">
+                        <span className="text-xs font-medium text-slate-200">{skill.name}</span>
+                        <span className="text-[10px] text-slate-400 font-mono">Proficient</span>
+                      </div>
+                    </div>
+                  ))}
+                </motion.div>
+              </AnimatePresence>
             </div>
           </div>
         )}
 
         {/* 2. EXPERIENCE VIEW */}
         {activeTab === 'experience' && (
-          <div className="space-y-6 text-left animate-fadeIn">
+          <div className="space-y-8 text-left animate-fadeIn">
             {experienceData.map((exp) => (
               <div
-                key={`${exp.company}-${exp.role}`}
+                key={exp.role}
                 className="relative overflow-hidden group rounded-2xl"
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                   <div>
-                    <span className="font-mono text-[10px] text-red-400 tracking-wider uppercase mb-0.5 block font-semibold">
+                    <span className="font-mono text-[10px] text-emerald-400 tracking-wider uppercase mb-0.5 block font-semibold">
                       {exp.company}
                     </span>
                     <h3 className="font-display font-bold text-xl text-white">
@@ -186,7 +147,7 @@ export default function Skills({ activeSection }: SkillsProps) {
 
                   {/* Duration Badge */}
                   <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-slate-300 font-mono self-start sm:self-center">
-                    <Calendar className="h-3.5 w-3.5 text-red-400" />
+                    <Calendar className="h-3.5 w-3.5 text-emerald-400" />
                     <span>{exp.duration}</span>
                   </div>
                 </div>
@@ -195,7 +156,7 @@ export default function Skills({ activeSection }: SkillsProps) {
                 <ul className="space-y-2.5 mb-5 text-slate-400 text-sm leading-relaxed">
                   {exp.description.map((bullet, bulletIdx) => (
                     <li key={bulletIdx} className="flex items-start gap-2">
-                      <ChevronRight className="h-4.5 w-4.5 text-red-500 flex-shrink-0 mt-0.5" />
+                      <ChevronRight className="h-4.5 w-4.5 text-emerald-400 flex-shrink-0 mt-0.5" />
                       <span>{bullet}</span>
                     </li>
                   ))}
@@ -206,7 +167,7 @@ export default function Skills({ activeSection }: SkillsProps) {
                   {exp.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-[10px] font-mono tracking-wider font-semibold px-2.5 py-1 rounded bg-red-500/10 border border-red-500/20 text-red-300 uppercase shadow-sm"
+                      className="text-[10px] font-mono tracking-wider font-semibold px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 uppercase shadow-sm"
                     >
                       {tag}
                     </span>
@@ -223,7 +184,7 @@ export default function Skills({ activeSection }: SkillsProps) {
             <div className="relative overflow-hidden group rounded-2xl">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
                 <div>
-                  <span className="font-mono text-[10px] text-red-400 tracking-wider uppercase mb-0.5 block font-semibold">
+                  <span className="font-mono text-[10px] text-emerald-400 tracking-wider uppercase mb-0.5 block font-semibold">
                     The Maharaja Sayajirao University of Baroda
                   </span>
                   <h3 className="font-display font-bold text-xl text-white">
@@ -233,7 +194,7 @@ export default function Skills({ activeSection }: SkillsProps) {
 
                 {/* Duration Badge */}
                 <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-slate-300 font-mono self-start sm:self-center">
-                  <Calendar className="h-3.5 w-3.5 text-red-400" />
+                  <Calendar className="h-3.5 w-3.5 text-emerald-400" />
                   <span>2022 — 2026</span>
                 </div>
               </div>
@@ -248,7 +209,7 @@ export default function Skills({ activeSection }: SkillsProps) {
                 {["Data Structures", "Algorithms", "Database Management Systems", "Object Oriented Programming", "Operating Systems", "Computer Networks"].map((course) => (
                   <span
                     key={course}
-                    className="text-[10px] font-mono tracking-wider font-semibold px-2.5 py-1 rounded bg-red-500/10 border border-red-500/20 text-red-300 uppercase shadow-sm"
+                    className="text-[10px] font-mono tracking-wider font-semibold px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 uppercase shadow-sm"
                   >
                     {course}
                   </span>
@@ -258,7 +219,6 @@ export default function Skills({ activeSection }: SkillsProps) {
           </div>
         )}
       </div>
-
     </section>
   );
 }

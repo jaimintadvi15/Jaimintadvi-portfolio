@@ -184,12 +184,12 @@ Guidelines:
       <div className="fixed bottom-6 right-6 z-50">
         <button 
           onClick={() => setIsOpen(!isOpen)}
-          className="relative p-4 rounded-2xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-indigo-600 hover:from-indigo-500 hover:via-purple-500 hover:to-indigo-500 text-white shadow-[0_8px_30px_rgba(124,58,237,0.4)] hover:shadow-[0_8px_35px_rgba(124,58,237,0.6)] transition-all duration-300 hover:scale-105 group border border-purple-500/20"
+          className="relative p-4 rounded-2xl bg-gradient-to-tr from-emerald-600 via-green-600 to-teal-600 hover:from-emerald-500 hover:via-green-500 hover:to-teal-500 text-white shadow-[0_8px_30px_rgba(34,197,94,0.4)] hover:shadow-[0_8px_35px_rgba(34,197,94,0.6)] transition-all duration-300 hover:scale-105 group border border-emerald-500/30 cursor-pointer"
           aria-label="Toggle chat"
         >
           {isOpen ? <X className="h-6 w-6" /> : <MessageSquare className="h-6 w-6" />}
           {!isOpen && (
-            <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-cyan-400 text-[10px] font-bold text-slate-950 border-2 border-slate-950 shadow-md">
+            <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-emerald-400 text-[10px] font-bold text-slate-950 border-2 border-slate-950 shadow-md">
               1
             </span>
           )}
@@ -204,19 +204,19 @@ Guidelines:
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 50, scale: 0.9 }}
             transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-            className="fixed bottom-24 right-6 w-[350px] sm:w-[400px] h-[500px] rounded-3xl glass-card border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.6)] flex flex-col overflow-hidden z-50 font-sans"
+            className="fixed bottom-24 right-6 w-[350px] sm:w-[400px] h-[500px] rounded-3xl glass-card border border-[#22c55e]/30 bg-[#040806]/95 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.85)] flex flex-col overflow-hidden z-50 font-sans"
           >
             {/* Header with Aurora radial glow */}
-            <div className="relative px-6 py-4 border-b border-white/5 flex items-center justify-between bg-slate-950/40">
-              <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-cyan-500/10 opacity-70 -z-10" />
+            <div className="relative px-6 py-4 border-b border-white/5 flex items-center justify-between bg-[#060c09]">
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-green-500/10 opacity-70 -z-10" />
               <div className="flex items-center gap-3">
-                <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-tr from-indigo-500 to-purple-500 shadow-md">
+                <div className="relative flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-tr from-emerald-500 to-teal-600 shadow-md">
                   <Sparkles className="h-5 w-5 text-white animate-pulse" />
                   <span className="absolute bottom-0 right-0 block h-2.5 w-2.5 rounded-full bg-emerald-400 border-2 border-slate-950" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-sm font-semibold text-white tracking-tight">Jaimin's AI Assistant</span>
-                  <span className="text-[10px] text-slate-400 font-mono flex items-center gap-1">
+                  <span className="text-[10px] text-emerald-400 font-mono flex items-center gap-1">
                     <span className="inline-block h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping" />
                     Online & Ready
                   </span>
@@ -224,7 +224,7 @@ Guidelines:
               </div>
               <button 
                 onClick={() => setIsOpen(false)}
-                className="p-1 rounded-full hover:bg-white/5 text-slate-400 hover:text-white transition-colors"
+                className="p-1 rounded-full hover:bg-white/5 text-slate-400 hover:text-white transition-colors cursor-pointer"
                 aria-label="Close chat"
               >
                 <X className="h-5 w-5" />
@@ -240,13 +240,13 @@ Guidelines:
                 >
                   <div className={`flex items-start gap-2.5 max-w-[80%] ${msg.sender === 'user' ? 'flex-row-reverse' : ''}`}>
                     <div className={`h-8 w-8 rounded-full flex items-center justify-center text-xs flex-shrink-0 ${
-                      msg.sender === 'user' ? 'bg-indigo-600/35 border border-indigo-500/30' : 'bg-slate-900 border border-white/5'
+                      msg.sender === 'user' ? 'bg-emerald-600/35 border border-emerald-500/30' : 'bg-[#060c09] border border-emerald-500/20'
                     }`}>
-                      {msg.sender === 'user' ? <User className="h-4 w-4 text-indigo-300" /> : <Bot className="h-4 w-4 text-emerald-400" />}
+                      {msg.sender === 'user' ? <User className="h-4 w-4 text-emerald-300" /> : <Bot className="h-4 w-4 text-emerald-400" />}
                     </div>
                     <div className={`rounded-2xl px-4 py-2.5 text-sm ${
                       msg.sender === 'user' 
-                        ? 'bg-indigo-600 text-white rounded-tr-none' 
+                        ? 'bg-emerald-600 text-white rounded-tr-none' 
                         : 'bg-white/5 border border-white/5 text-slate-200 rounded-tl-none leading-relaxed'
                     }`}>
                       {msg.text}

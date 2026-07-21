@@ -179,19 +179,19 @@ export default function Timeline() {
   return (
     <section id="pathways" className="py-20 px-4 max-w-6xl mx-auto relative scroll-mt-24">
       {/* Background Ambient Glows */}
-      <div className="absolute top-1/3 left-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none -z-10" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-600/15 rounded-full blur-[150px] pointer-events-none -z-10" />
+      <div className="absolute top-1/3 left-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-teal-600/15 rounded-full blur-[150px] pointer-events-none -z-10" />
 
       {/* Section Header */}
       <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12 border-b border-white/5 pb-8">
         <div>
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-mono mb-3 shadow-[0_0_15px_rgba(6,182,212,0.15)]">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#22c55e]/10 border border-[#22c55e]/30 text-[#22c55e] text-xs font-mono mb-3 shadow-[0_0_15px_rgba(34,197,94,0.15)]">
             <Sparkles className="w-3.5 h-3.5" />
             <span>INTERACTIVE CAREER CONSOLE</span>
           </div>
           <h2 className="font-display font-extrabold text-3xl md:text-5xl text-white tracking-tight">
             Journey &amp;{' '}
-            <span className="bg-gradient-to-r from-cyan-400 via-teal-300 to-purple-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-green-400 bg-clip-text text-transparent">
               Experience
             </span>
           </h2>
@@ -201,12 +201,12 @@ export default function Timeline() {
         </div>
 
         {/* View Mode Toggle Switcher */}
-        <div className="flex items-center gap-1.5 p-1 rounded-2xl bg-[#080918] border border-cyan-500/30 backdrop-blur-md shadow-xl font-mono text-xs">
+        <div className="flex items-center gap-1.5 p-1 rounded-2xl bg-[#040806] border border-[#22c55e]/30 backdrop-blur-md shadow-xl font-mono text-xs">
           <button
             onClick={() => setViewMode('console')}
             className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-300 ${
               viewMode === 'console'
-                ? 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-bold shadow-[0_0_15px_rgba(6,182,212,0.4)]'
+                ? 'bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold shadow-[0_0_15px_rgba(34,197,94,0.4)]'
                 : 'text-slate-400 hover:text-slate-200'
             }`}
           >
@@ -217,7 +217,7 @@ export default function Timeline() {
             onClick={() => setViewMode('blueprint')}
             className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-300 ${
               viewMode === 'blueprint'
-                ? 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-white font-bold shadow-[0_0_15px_rgba(6,182,212,0.4)]'
+                ? 'bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold shadow-[0_0_15px_rgba(34,197,94,0.4)]'
                 : 'text-slate-400 hover:text-slate-200'
             }`}
           >

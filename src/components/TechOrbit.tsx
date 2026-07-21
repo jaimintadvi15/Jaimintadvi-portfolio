@@ -8,7 +8,6 @@ import {
   Brain,
   Code2,
   Database,
-  Users,
   Building2,
   GitBranch,
   Trophy,
@@ -36,7 +35,7 @@ export default function TechOrbit() {
       name: 'Code Vimarsh Portal',
       category: 'Official Club Web Hub',
       url: 'https://github.com/jaimintadvi',
-      icon: <Globe className="w-4 h-4 text-cyan-400" />,
+      icon: <Globe className="w-4 h-4 text-emerald-400" />,
       ring: 1,
       angle: 0,
     },
@@ -54,7 +53,7 @@ export default function TechOrbit() {
       name: 'Developer Portfolio',
       category: 'Interactive Glassmorphism Web App',
       url: 'https://jaimintadvi.dev',
-      icon: <Code2 className="w-4 h-4 text-purple-400" />,
+      icon: <Code2 className="w-4 h-4 text-green-400" />,
       ring: 1,
       angle: 180,
     },
@@ -63,7 +62,7 @@ export default function TechOrbit() {
       name: 'E-Commerce Store UI',
       category: 'React Shopping Engine App',
       url: 'https://jaimintadvi-shop.netlify.app',
-      icon: <ShoppingBag className="w-4 h-4 text-sky-400" />,
+      icon: <ShoppingBag className="w-4 h-4 text-emerald-300" />,
       ring: 1,
       angle: 270,
     },
@@ -74,7 +73,7 @@ export default function TechOrbit() {
       name: 'Student CRUD Portal',
       category: 'Node & Mongo Management App',
       url: 'https://jaimintadvi-student-app.herokuapp.com',
-      icon: <Database className="w-4 h-4 text-indigo-400" />,
+      icon: <Database className="w-4 h-4 text-teal-400" />,
       ring: 2,
       angle: 30,
     },
@@ -83,7 +82,7 @@ export default function TechOrbit() {
       name: 'Weather Analytics Web App',
       category: 'Real-time API Forecast Dashboard',
       url: 'https://jaimintadvi-weather.netlify.app',
-      icon: <CloudSun className="w-4 h-4 text-amber-400" />,
+      icon: <CloudSun className="w-4 h-4 text-emerald-400" />,
       ring: 2,
       angle: 120,
     },
@@ -92,7 +91,7 @@ export default function TechOrbit() {
       name: 'MSU Baroda CSE Portal',
       category: 'Department Resource Web Hub',
       url: 'https://github.com/jaimintadvi',
-      icon: <Building2 className="w-4 h-4 text-cyan-400" />,
+      icon: <Building2 className="w-4 h-4 text-green-400" />,
       ring: 2,
       angle: 210,
     },
@@ -101,7 +100,7 @@ export default function TechOrbit() {
       name: 'GitHub Open Source Hub',
       category: 'Community Web Toolkits & Repos',
       url: 'https://github.com/jaimintadvi',
-      icon: <GitBranch className="w-4 h-4 text-orange-400" />,
+      icon: <GitBranch className="w-4 h-4 text-teal-300" />,
       ring: 2,
       angle: 300,
     },
@@ -112,7 +111,7 @@ export default function TechOrbit() {
       name: 'Inter-College Hackathon Portal',
       category: 'Resource Sharing Web App',
       url: 'https://github.com/jaimintadvi',
-      icon: <Trophy className="w-4 h-4 text-yellow-400" />,
+      icon: <Trophy className="w-4 h-4 text-amber-400" />,
       ring: 3,
       angle: 15,
     },
@@ -121,7 +120,7 @@ export default function TechOrbit() {
       name: 'Algorithmic Showdown Board',
       category: 'Live Coding Competition Leaderboard',
       url: 'https://github.com/jaimintadvi',
-      icon: <Zap className="w-4 h-4 text-cyan-300" />,
+      icon: <Zap className="w-4 h-4 text-emerald-300" />,
       ring: 3,
       angle: 87,
     },
@@ -130,7 +129,7 @@ export default function TechOrbit() {
       name: 'AI Agent Web Assistant',
       category: 'LangGraph & AI Workflow App',
       url: 'https://github.com/jaimintadvi',
-      icon: <Brain className="w-4 h-4 text-purple-400" />,
+      icon: <Brain className="w-4 h-4 text-green-400" />,
       ring: 3,
       angle: 159,
     },
@@ -148,13 +147,13 @@ export default function TechOrbit() {
       name: 'Edulink Analytics System',
       category: 'Cloud Data Metrics Platform',
       url: 'https://github.com/jaimintadvi',
-      icon: <BarChart3 className="w-4 h-4 text-indigo-400" />,
+      icon: <BarChart3 className="w-4 h-4 text-emerald-400" />,
       ring: 3,
       angle: 303,
     },
   ];
 
-  // Compact Ring radii configuration (Small & sleek orbit)
+  // Compact Ring radii configuration (Electric Cyber Green theme)
   const ringSizes = {
     1: { diameter: 'w-[150px] h-[150px]', radiusPx: 75, anim: 'animate-orbit-cw-slow' },
     2: { diameter: 'w-[250px] h-[250px]', radiusPx: 125, anim: 'animate-orbit-ccw-slow' },
@@ -163,16 +162,16 @@ export default function TechOrbit() {
 
   return (
     <div className="relative w-full max-w-[400px] aspect-square mx-auto flex items-center justify-center select-none overflow-hidden py-2">
-      {/* Ambient Cosmic Background Lighting Core */}
+      {/* Ambient Cyber Background Lighting Core */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-56 h-56 bg-cyan-500/10 rounded-full blur-[80px]" />
-        <div className="w-32 h-32 bg-purple-600/15 rounded-full blur-[50px]" />
+        <div className="w-56 h-56 bg-emerald-500/10 rounded-full blur-[80px]" />
+        <div className="w-32 h-32 bg-teal-600/15 rounded-full blur-[50px]" />
       </div>
 
-      {/* --- Cosmic Orbit Rings --- */}
-      <div className={`absolute rounded-full border border-cyan-500/20 bg-cyan-500/[0.01] ${ringSizes[1].diameter}`} />
-      <div className={`absolute rounded-full border border-indigo-500/20 bg-indigo-500/[0.01] ${ringSizes[2].diameter}`} />
-      <div className={`absolute rounded-full border border-purple-500/20 bg-purple-500/[0.005] ${ringSizes[3].diameter}`} />
+      {/* --- Cyber Orbit Rings --- */}
+      <div className={`absolute rounded-full border border-emerald-500/30 bg-emerald-500/[0.01] ${ringSizes[1].diameter}`} />
+      <div className={`absolute rounded-full border border-teal-500/30 bg-teal-500/[0.01] ${ringSizes[2].diameter}`} />
+      <div className={`absolute rounded-full border border-green-500/30 bg-green-500/[0.005] ${ringSizes[3].diameter}`} />
 
       {/* --- Orbiting Website Nodes Containers --- */}
 
@@ -194,15 +193,15 @@ export default function TechOrbit() {
               style={{ transform: `translate(${x}px, ${y}px)` }}
             >
               <div className="animate-orbit-ccw-slow hover:[animation-play-state:paused]">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#090b1c]/90 border border-cyan-500/30 backdrop-blur-md flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-125 group-hover:border-cyan-400 group-hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] relative">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#040806]/90 border border-emerald-500/30 backdrop-blur-md flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-125 group-hover:border-emerald-400 group-hover:shadow-[0_0_15px_rgba(34,197,94,0.4)] relative">
                   {node.icon}
 
                   {/* Floating Tooltip */}
                   <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-200 z-50 whitespace-nowrap">
-                    <div className="bg-[#080a18] border border-cyan-500/30 text-white text-[10px] font-mono px-2.5 py-1 rounded-lg shadow-2xl flex flex-col items-center backdrop-blur-xl">
-                      <div className="flex items-center gap-1 font-bold text-cyan-300">
+                    <div className="bg-[#040806] border border-emerald-500/40 text-white text-[10px] font-mono px-2.5 py-1 rounded-lg shadow-2xl flex flex-col items-center backdrop-blur-xl">
+                      <div className="flex items-center gap-1 font-bold text-emerald-300">
                         <span>{node.name}</span>
-                        <ExternalLink className="w-2.5 h-2.5 text-cyan-400" />
+                        <ExternalLink className="w-2.5 h-2.5 text-emerald-400" />
                       </div>
                       <span className="text-[9px] text-slate-400">{node.category}</span>
                     </div>
@@ -232,15 +231,15 @@ export default function TechOrbit() {
               style={{ transform: `translate(${x}px, ${y}px)` }}
             >
               <div className="animate-orbit-cw-slow hover:[animation-play-state:paused]">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#090b1c]/90 border border-indigo-500/30 backdrop-blur-md flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-125 group-hover:border-indigo-400 group-hover:shadow-[0_0_15px_rgba(99,102,241,0.4)] relative">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#040806]/90 border border-teal-500/30 backdrop-blur-md flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-125 group-hover:border-teal-400 group-hover:shadow-[0_0_15px_rgba(20,184,166,0.4)] relative">
                   {node.icon}
 
                   {/* Floating Tooltip */}
                   <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-200 z-50 whitespace-nowrap">
-                    <div className="bg-[#080a18] border border-indigo-500/30 text-white text-[10px] font-mono px-2.5 py-1 rounded-lg shadow-2xl flex flex-col items-center backdrop-blur-xl">
-                      <div className="flex items-center gap-1 font-bold text-indigo-300">
+                    <div className="bg-[#040806] border border-teal-500/40 text-white text-[10px] font-mono px-2.5 py-1 rounded-lg shadow-2xl flex flex-col items-center backdrop-blur-xl">
+                      <div className="flex items-center gap-1 font-bold text-teal-300">
                         <span>{node.name}</span>
-                        <ExternalLink className="w-2.5 h-2.5 text-cyan-400" />
+                        <ExternalLink className="w-2.5 h-2.5 text-emerald-400" />
                       </div>
                       <span className="text-[9px] text-slate-400">{node.category}</span>
                     </div>
@@ -270,15 +269,15 @@ export default function TechOrbit() {
               style={{ transform: `translate(${x}px, ${y}px)` }}
             >
               <div className="animate-orbit-ccw-fast hover:[animation-play-state:paused]">
-                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#090b1c]/90 border border-purple-500/30 backdrop-blur-md flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-125 group-hover:border-purple-400 group-hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] relative">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#040806]/90 border border-green-500/30 backdrop-blur-md flex items-center justify-center shadow-lg transition-all duration-300 group-hover:scale-125 group-hover:border-green-400 group-hover:shadow-[0_0_15px_rgba(34,197,94,0.4)] relative">
                   {node.icon}
 
                   {/* Floating Tooltip */}
                   <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-200 z-50 whitespace-nowrap">
-                    <div className="bg-[#080a18] border border-purple-500/30 text-white text-[10px] font-mono px-2.5 py-1 rounded-lg shadow-2xl flex flex-col items-center backdrop-blur-xl">
-                      <div className="flex items-center gap-1 font-bold text-purple-300">
+                    <div className="bg-[#040806] border border-green-500/40 text-white text-[10px] font-mono px-2.5 py-1 rounded-lg shadow-2xl flex flex-col items-center backdrop-blur-xl">
+                      <div className="flex items-center gap-1 font-bold text-green-300">
                         <span>{node.name}</span>
-                        <ExternalLink className="w-2.5 h-2.5 text-cyan-400" />
+                        <ExternalLink className="w-2.5 h-2.5 text-emerald-400" />
                       </div>
                       <span className="text-[9px] text-slate-400">{node.category}</span>
                     </div>
@@ -297,20 +296,20 @@ export default function TechOrbit() {
         whileTap={{ scale: 0.95 }}
         className="relative z-30 cursor-pointer group"
       >
-        <div className="absolute -inset-1.5 bg-gradient-to-r from-cyan-500 via-indigo-500 to-purple-600 rounded-full blur-md opacity-60 group-hover:opacity-100 animate-pulse transition-opacity duration-300" />
+        <div className="absolute -inset-1.5 bg-gradient-to-r from-emerald-500 via-teal-500 to-green-600 rounded-full blur-md opacity-60 group-hover:opacity-100 animate-pulse transition-opacity duration-300" />
         
-        <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#060714] border-2 border-cyan-500/50 flex flex-col items-center justify-center shadow-[0_0_25px_rgba(6,182,212,0.4)]">
-          <span className="font-display font-extrabold text-xl sm:text-2xl bg-gradient-to-r from-cyan-400 via-teal-300 to-purple-400 bg-clip-text text-transparent tracking-tight">
+        <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#040806] border-2 border-emerald-500/60 flex flex-col items-center justify-center shadow-[0_0_25px_rgba(34,197,94,0.4)]">
+          <span className="font-display font-extrabold text-xl sm:text-2xl bg-gradient-to-r from-emerald-400 via-teal-300 to-green-400 bg-clip-text text-transparent tracking-tight">
             WEB
           </span>
-          <span className="text-[8px] font-mono text-cyan-300/80 tracking-widest uppercase">
+          <span className="text-[8px] font-mono text-emerald-300/80 tracking-widest uppercase">
             HUBS
           </span>
         </div>
 
         <div className="absolute top-full mt-2.5 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-200 z-50 whitespace-nowrap">
-          <div className="bg-[#080918] border border-cyan-500/30 text-cyan-300 font-bold text-[10px] font-mono px-3 py-1 rounded-full shadow-2xl backdrop-blur-md">
-            Jaimin Tadvi • Web Universe
+          <div className="bg-[#040806] border border-emerald-500/40 text-emerald-300 font-bold text-[10px] font-mono px-3 py-1 rounded-full shadow-2xl backdrop-blur-md">
+            Jaimin Tadvi • Cyber Web Orbit
           </div>
         </div>
       </motion.a>

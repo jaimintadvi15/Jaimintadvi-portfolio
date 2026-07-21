@@ -162,7 +162,7 @@ export default function Hero() {
 
       default:
         response = (
-          <p className="text-rose-400">
+          <p className="text-amber-400">
             Command not found: &apos;{cmdRaw}&apos;. Type <span className="text-white font-bold">&apos;help&apos;</span> to see options.
           </p>
         );
@@ -239,9 +239,9 @@ export default function Hero() {
           className="lg:col-span-7 flex flex-col items-start text-left space-y-6"
         >
           {/* Status Badge Tag */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#070918]/90 border border-cyan-500/30 text-cyan-400 text-xs font-mono font-bold tracking-wider uppercase shadow-[0_0_20px_rgba(6,182,212,0.25)]">
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#060c09]/90 border border-emerald-500/40 text-emerald-400 text-xs font-mono font-bold tracking-wider uppercase shadow-[0_0_20px_rgba(34,197,94,0.3)]">
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
             </span>
             $ NPM RUN START:DEV
@@ -250,7 +250,7 @@ export default function Hero() {
           {/* Main Headline */}
           <h1 className="font-display font-extrabold text-4xl sm:text-6xl lg:text-7xl tracking-tight text-white leading-[1.1]">
             Hi, I&apos;m {firstName}{' '}
-            <span className="bg-gradient-to-r from-cyan-400 via-teal-300 to-purple-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(6,182,212,0.4)]">
+            <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-green-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(34,197,94,0.4)]">
               {lastName}
             </span>
           </h1>
@@ -258,10 +258,10 @@ export default function Hero() {
           {/* Dynamic Monospace Role Line */}
           <div className="text-xl sm:text-2xl font-mono text-slate-200 font-medium">
             I am a{' '}
-            <span className="bg-gradient-to-r from-cyan-300 via-teal-300 to-purple-300 bg-clip-text text-transparent font-bold underline decoration-cyan-500/40 underline-offset-4">
+            <span className="bg-gradient-to-r from-emerald-300 via-teal-300 to-green-300 bg-clip-text text-transparent font-bold underline decoration-emerald-500/40 underline-offset-4">
               {displayText}
             </span>
-            <span className="animate-pulse text-cyan-400 font-bold ml-0.5">|</span>
+            <span className="animate-pulse text-emerald-400 font-bold ml-0.5">|</span>
           </div>
 
           {/* Bio Description */}
@@ -270,9 +270,9 @@ export default function Hero() {
           </p>
 
           {/* Compiler Message Directive Box */}
-          <div className="w-full max-w-xl rounded-xl bg-[#090b18]/90 border border-indigo-500/30 p-4 sm:p-5 font-mono shadow-2xl relative overflow-hidden backdrop-blur-md">
-            <div className="text-cyan-400 text-xs font-bold tracking-wider mb-2 flex items-center gap-1.5">
-              // COMPILER MESSAGE DIRECTIVE
+          <div className="w-full max-w-xl rounded-xl bg-[#060c09]/90 border border-emerald-500/30 p-4 sm:p-5 font-mono shadow-2xl relative overflow-hidden backdrop-blur-md">
+            <div className="text-emerald-400 text-xs font-bold tracking-wider mb-2 flex items-center gap-1.5">
+              // SYSTEM DIRECTIVE :: CODE LOGIC
             </div>
             <p className="text-slate-200 text-sm sm:text-base italic tracking-wide">
               &quot;Driven by relentless curiosity, obsessed with clean architecture, and built to transform complex ideas into high-impact software. ⚡&quot;
@@ -284,7 +284,7 @@ export default function Hero() {
             <Magnetic>
               <a
                 href="#achievements"
-                className="group relative inline-flex items-center gap-2 rounded-full px-7 py-3.5 bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-semibold text-sm transition-all duration-300 shadow-[0_0_25px_rgba(6,182,212,0.35)] hover:shadow-[0_0_35px_rgba(168,85,247,0.5)] hover:-translate-y-0.5"
+                className="group relative inline-flex items-center gap-2 rounded-full px-7 py-3.5 bg-gradient-to-r from-emerald-500 via-green-600 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-semibold text-sm transition-all duration-300 shadow-[0_0_25px_rgba(34,197,94,0.35)] hover:shadow-[0_0_35px_rgba(34,197,94,0.5)] hover:-translate-y-0.5"
               >
                 <span>View Achievements</span>
                 <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1 transition-transform" />
@@ -294,7 +294,7 @@ export default function Hero() {
             <Magnetic>
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 bg-[#0e1020] hover:bg-[#161830] border border-cyan-500/30 hover:border-cyan-400 text-slate-200 hover:text-white font-semibold text-sm transition-all duration-300 hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 bg-[#0a120e] hover:bg-[#101c16] border border-emerald-500/30 hover:border-emerald-400 text-slate-200 hover:text-white font-semibold text-sm transition-all duration-300 hover:-translate-y-0.5"
               >
                 <span>Let&apos;s Connect</span>
                 <span className="text-base">👏</span>
@@ -310,17 +310,17 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
           className="lg:col-span-5 w-full flex justify-center lg:justify-end"
         >
-          <div className="w-full max-w-xl rounded-2xl border border-cyan-500/25 bg-[#080916]/95 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.85)] overflow-hidden font-mono text-left">
+          <div className="w-full max-w-xl rounded-2xl border border-emerald-500/30 bg-[#060c09]/95 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.85)] overflow-hidden font-mono text-left">
             
             {/* Window Top Title Bar */}
-            <div className="px-4 py-3 bg-[#0d0f20] border-b border-cyan-500/20 flex items-center justify-between">
+            <div className="px-4 py-3 bg-[#0a120e] border-b border-emerald-500/20 flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-[#ff5f56] inline-block" />
                 <span className="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block" />
                 <span className="w-3 h-3 rounded-full bg-[#27c93f] inline-block" />
 
-                <span className="ml-3 inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-[10px] font-mono uppercase tracking-wider font-bold">
-                  <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                <span className="ml-3 inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] font-mono uppercase tracking-wider font-bold">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   [LIVE LINK]
                 </span>
 
@@ -332,24 +332,24 @@ export default function Hero() {
               <button
                 onClick={handleCopyShell}
                 title="Copy shell line"
-                className="text-slate-400 hover:text-white text-xs flex items-center gap-1 bg-white/5 hover:bg-white/10 px-2 py-1 rounded transition-colors"
+                className="text-slate-400 hover:text-white text-xs flex items-center gap-1 bg-white/5 hover:bg-white/10 px-2 py-1 rounded transition-colors cursor-pointer"
               >
-                {copied ? <Check className="w-3.5 h-3.5 text-cyan-400" /> : <Copy className="w-3.5 h-3.5" />}
+                {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
               </button>
             </div>
 
             {/* Terminal Body Log */}
             <div 
               ref={terminalLogsRef}
-              className="p-4 space-y-3 text-xs font-mono min-h-[250px] max-h-[340px] overflow-y-auto custom-scrollbar bg-[#060712]"
+              className="p-4 space-y-3 text-xs font-mono min-h-[250px] max-h-[340px] overflow-y-auto custom-scrollbar bg-[#030604]"
             >
               {/* Default Welcome Command & Card */}
               <div className="flex items-center gap-2 text-slate-300">
                 <span className="text-slate-400">jaimin@portfolio:~$</span>
-                <span className="text-cyan-400 font-bold">help</span>
+                <span className="text-emerald-400 font-bold">help</span>
               </div>
 
-              <div className="bg-[#0e1022] border border-cyan-500/20 rounded-xl p-3.5 space-y-1.5 text-slate-300 shadow-inner">
+              <div className="bg-[#08100b] border border-emerald-500/20 rounded-xl p-3.5 space-y-1.5 text-slate-300 shadow-inner">
                 <p className="font-semibold text-slate-100">Welcome to Jaimin&apos;s Portfolio interactive shell!</p>
                 <p className="text-slate-400 text-xs">Type or click a command below to explore.</p>
               </div>
@@ -359,9 +359,9 @@ export default function Hero() {
                 <div key={item.id} className="space-y-2 pt-1">
                   <div className="flex items-center gap-2 text-slate-300">
                     <span className="text-slate-400">jaimin@portfolio:~$</span>
-                    <span className="text-cyan-400 font-bold">{item.command}</span>
+                    <span className="text-emerald-400 font-bold">{item.command}</span>
                   </div>
-                  <div className="pl-3 border-l-2 border-cyan-500/40 py-1">
+                  <div className="pl-3 border-l-2 border-emerald-500/40 py-1">
                     {item.response}
                   </div>
                 </div>
@@ -369,7 +369,7 @@ export default function Hero() {
             </div>
 
             {/* Quick Shell Command Chips */}
-            <div className="px-4 py-2.5 bg-[#0a0c1a] border-t border-b border-cyan-500/20 flex flex-wrap items-center gap-2">
+            <div className="px-4 py-2.5 bg-[#08100b] border-t border-b border-emerald-500/20 flex flex-wrap items-center gap-2">
               <span className="text-[10px] font-mono text-slate-400 font-bold uppercase tracking-wider mr-1">
                 QUICK SHELL:
               </span>
@@ -377,7 +377,7 @@ export default function Hero() {
                 <button
                   key={cmd}
                   onClick={() => executeCommand(cmd)}
-                  className="px-2.5 py-1 rounded-md bg-[#101226] hover:bg-[#181a38] border border-cyan-500/20 hover:border-cyan-400/60 text-slate-300 hover:text-cyan-300 text-[11px] font-mono transition-all hover:scale-105 cursor-pointer"
+                  className="px-2.5 py-1 rounded-md bg-[#0e1c14] hover:bg-[#162a1e] border border-emerald-500/20 hover:border-emerald-400/60 text-slate-300 hover:text-emerald-300 text-[11px] font-mono transition-all hover:scale-105 cursor-pointer"
                 >
                   {cmd}
                 </button>
@@ -385,8 +385,8 @@ export default function Hero() {
             </div>
 
             {/* Terminal Command Input */}
-            <form onSubmit={handleTerminalSubmit} className="px-4 py-3 bg-[#060712] flex items-center gap-2">
-              <span className="text-cyan-400 font-bold text-sm font-mono">$</span>
+            <form onSubmit={handleTerminalSubmit} className="px-4 py-3 bg-[#030604] flex items-center gap-2">
+              <span className="text-emerald-400 font-bold text-sm font-mono">$</span>
               <input
                 type="text"
                 value={terminalInput}
