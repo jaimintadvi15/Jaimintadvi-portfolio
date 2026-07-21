@@ -97,3 +97,38 @@
 .animate-pulse-slow-reverse {
   animation: pulse-slow 20s infinite ease-in-out reverse;
 }
+
+/* Orbit Rotations */
+@keyframes spin-orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-orbit-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-orbit-cw-slow {
+  animation: spin-orbit 50s linear infinite;
+}
+
+.animate-orbit-ccw-slow {
+  animation: spin-orbit-reverse 40s linear infinite;
+}
+
+.animate-orbit-cw-fast {
+  animation: spin-orbit 30s linear infinite;
+}
+
+.animate-orbit-ccw-fast {
+  animation: spin-orbit-reverse 35s linear infinite;
+}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Calendar, ChevronRight, Code2, Briefcase, GraduationCap } from 'lucide-react';
 import { personalInfo, experienceData } from '../data';
 import MSULogo from './MSULogo';
+import TechOrbit from './TechOrbit';
 
 const programmingSkills = ["C++", "C", "Java", "HTML5", "CSS3"];
 const frameworksSkills = ["React.js", "Node.js"];
